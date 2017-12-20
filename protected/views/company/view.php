@@ -26,13 +26,10 @@ $this->menu=array(
 <div class="conteiner">
 	<div class="sidebar __right">
 		<div class="sidebar_company_view">
-			<h2>ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ О ФИРМЕ <?=$model->name?> В <?=$this->city->gorode?></h2>
+			<h2>КОНТАКТНЫЕ ДАННЫЕ ФИРМЫ <?=$model->name?> В <?=$this->city->gorode?></h2>
 			<div class="sidebar_company_view_img">
 				<img src="<?php echo Yii::app()->request->baseUrl; ?>/img/<?=$model->logo ? $model->logo : 'defineLogo.jpg'?>" alt="<?=$model->name?> в <?=$this->city->gorode?>" />
 			</div>
-			<?php
-				if (0) { // для фильтра по СЕО
-			?>
 			<ul>
 				<li>
 					<small>Полное наименование</small>
@@ -58,7 +55,7 @@ $this->menu=array(
 				<? } ?>
 				<? if (count($model->service)) { ?>
 				<li>
-					Услуги (<?=count($model->service)?>)
+					<a class="sidebar_company_view_service">Услуги (<?=count($model->service)?>)</a>
 				</li>
 				<? } ?>
 				<? if (count($model->news)) { ?>
@@ -72,7 +69,6 @@ $this->menu=array(
 					</a>
 				</li>
 			</ul>
-			<?php } ?>
 		</div>
 		<div class="sidebar_market_href_tiz __gg">
 			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -238,7 +234,7 @@ $this->menu=array(
 			</div>
 			<? } ?>
 			<?
-				if (count($model->news) && 0) // для фильтра по СЕО
+				if (count($model->news))
 				{
 					$date=explode(".",date('d.m.Y', $model->news[0]->date_create));
 					switch ($date[1]){

@@ -25,6 +25,9 @@ $(document).ready(function(){
 	$('.sidebar_company_view_review').click(function(){
 		$("body,html").animate({ scrollTop: $('.content_company_review').offset().top - 20 }, 300);
 	});
+	$('.sidebar_company_view_service').click(function(){
+		$("body,html").animate({ scrollTop: $('.content_company_service').offset().top - 20 }, 300);
+	});
 	/*------------------------добавление отзывов----------------------*/
 	$('.review_add_button').click(function(){
 		if ($(this).hasClass('__active'))
