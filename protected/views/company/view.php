@@ -26,33 +26,11 @@ $this->menu=array(
 <div class="conteiner">
 	<div class="sidebar __right">
 		<div class="sidebar_company_view">
-			<h2>КОНТАКТНЫЕ ДАННЫЕ ФИРМЫ <?=$model->name?> В <?=$this->city->gorode?></h2>
+			<h2>ДОПОЛНИТЕЛЬНЫЕ ДАННЫЕ КОМПАНИИ <?=$model->name?> В <?=$this->city->gorode?></h2>
 			<div class="sidebar_company_view_img">
 				<img src="<?php echo Yii::app()->request->baseUrl; ?>/img/<?=$model->logo ? $model->logo : 'defineLogo.jpg'?>" alt="<?=$model->name?> в <?=$this->city->gorode?>" />
 			</div>
 			<ul>
-				<li>
-					<small>Полное наименование</small>
-					<span><?=$model->full_name?></span>
-				</li>
-				<? if ($model->site) { ?>
-				<li>
-					<small>Сайт</small>
-					<span><?=$model->site?></span>
-				</li>
-				<? } ?>
-				<? if ($model->address) { ?>
-				<li>
-					<small>Адрес</small>
-					<span><?=$model->address?></span>
-				</li>
-				<? } ?>
-				<? if ($model->phone) { ?>
-				<li>
-					<small>Телефон</small>
-					<span><?=$model->phone?></span>
-				</li>
-				<? } ?>
 				<? if (count($model->service)) { ?>
 				<li>
 					<a class="sidebar_company_view_service">Услуги (<?=count($model->service)?>)</a>
@@ -232,31 +210,6 @@ $this->menu=array(
 				</div>
 				<? } ?>
 			</div>
-			<? } ?>
-			<?
-				if (count($model->news))
-				{
-					$date=explode(".",date('d.m.Y', $model->news[0]->date_create));
-					switch ($date[1]){
-						case 1: $m='января'; break;
-						case 2: $m='февраля'; break;
-						case 3: $m='марта'; break;
-						case 4: $m='апреля'; break;
-						case 5: $m='мая'; break;
-						case 6: $m='июня'; break;
-						case 7: $m='июля'; break;
-						case 8: $m='августа'; break;
-						case 9: $m='сентября'; break;
-						case 10: $m='октября'; break;
-						case 11: $m='ноября'; break;
-						case 12: $m='декабря'; break;
-					};
-			?>
-				<div class="content_company_news">
-					<h3>НОВОСТИ</h3>
-					<span>Последняя новость <?=$model->name?> | <i><?=$date[0]*1.0?> <?=$m?> <?=$date[2]?></i></span>
-					<p><?=str_replace('{company}', $model->name, $model->news[0]->preview)?></p>
-				</div>
 			<? } ?>
 			<div class="start_market_between_tiz __gorod __gg">
 				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
