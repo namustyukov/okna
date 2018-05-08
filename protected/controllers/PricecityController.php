@@ -68,9 +68,18 @@ class PricecityController extends Controller
 
 		if(isset($_POST['Pricecity']))
 		{
-			$model->attributes=$_POST['Pricecity'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			$date_create = $_POST['Pricecity']['date_create'];
+
+			unset($_POST['Pricecity']['date_create']);
+
+			foreach ($_POST['Pricecity'] as $row) {
+				$price = new Pricecity();
+				$price->attributes = $row;
+				$price->date_create = $date_create;
+				$price->save();
+			}
+
+			$this->redirect(array('admin'));
 		}
 
 		$this->render('create',array(
