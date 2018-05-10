@@ -3105,3 +3105,28 @@ body {
 		height: 120px;
 		display: inline-block;
 	}
+
+.page-description {
+	padding: 15px 20px 15px 40px;
+	margin: 20px 0;
+	border-radius: 10px;
+	background: url(img/blockquote.png) no-repeat 7px 15px #fafafa;
+}
+	.page-description * {
+		font-size: 13px !important;
+		line-height: 22px !important;
+	}
+	.page-description p {
+		margin-bottom: 10px;
+	}
+	.page-description ul{
+		margin: 10px 0;
+		padding: 0;
+	}
+	.page-description li{
+		display:block;
+		margin: 0;
+		padding: 0;
+		padding-left: 15px;
+		background: url(img/content_company_service_row.png) 0px 7px no-repeat;
+	}
