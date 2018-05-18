@@ -187,6 +187,7 @@ class SiteController extends Controller
 		$count_review = Review::model()->count();
 		
 		$count_promo = Company::model()->count(array('condition'=>'length(promo) > 0'));
+		$count_price = Company::model()->count(array('condition'=>'length(price) > 0'));
 
 		$page_list = Page::model()->findAll(array(
 			'order' => 'date_create DESC',
@@ -204,6 +205,7 @@ class SiteController extends Controller
 			'count_news' => $count_news,
 			'count_review' => $count_review,
 			'count_promo' => $count_promo,
+			'count_price' => $count_price,
 			'count_city' => $count_city,
 			'page_list' => $page_list,
 		));

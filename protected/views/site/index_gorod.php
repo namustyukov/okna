@@ -67,18 +67,11 @@
 	</div>
 	<div class="content">
 		<div class="content_gorod">
-			<div class="content_gorod_text">
-				<p>В городе <?=$this->city->gorod?> обнаружено:</p>
-				<ul>
-					<li><a href="/<?=$this->city->simbol_name?>/company/list">Оконных фирм - <?=count($this->city->company)?></a></li>
-					<li><a href="/<?=$this->city->simbol_name?>/promo/list">Акций - <?=count($promoes)?></a></li>
-					<li><a href="/<?=$this->city->simbol_name?>/prices/list">Цена окна - <?=$this->city->region->price[0]->price + $this->city->id?> руб. за 1 м. кв.</a></li>
-					<li><a href="/<?=$this->city->simbol_name?>/review/list">Отзывов - <?=count($this->city->reviews)?></a></li>
-					<li><a href="/<?=$this->city->simbol_name?>/news/list">Новостей - <?=count($this->city->news)?></a></li>
-				</ul>
-			</div>
 			<div class="content_gorod_price_wrapper">
 				<h2>Анализ изменения цен на окна</h2>
+				<div class="page-description">
+					<p><?=$this->city->gorod?> занимает <?=$this->city->rating?> место по стоимости окон ПВХ из <a href="/city/list">представленных городов</a> России</p>
+				</div>
 				<div class="content_gorod_price">
 					<div class="gorod_price_graph">
 					<? foreach ($pricecity as $key => $row) { ?>
@@ -103,7 +96,6 @@
 					?>
 					</div>
 					<div class="gorod_price_text">
-						<p><?=$this->city->gorod?> занимает <?=$this->city->rating?> место по стоимости окон ПВХ из <a href="/city/list">представленных городов</a> России</p>
 						<h4>Выгодные цены от:</h4>
 						<ul>
 						<?
@@ -136,7 +128,7 @@
 								</li>
 						<?
 								$sch++;
-								if ($sch >= 3) break;
+								if ($sch >= 5) break;
 							}
 						?>
 							<li><a href="/<?=$this->city->simbol_name?>/prices/list">Сравнить цены всех компаний</a></li>
@@ -144,77 +136,75 @@
 					</div>
 				</div>
 			</div>
-			<div class="content_gorod_promo_review_wrapper">
-				<div class="gorod_promo_wrapper">
-					<h3>Акции и скидки компаний</h3>
-					<div class="gorod_promo_list">
-				<?
-					if (count($promoes))
+			<div class="gorod_promo_wrapper">
+				<h3>Акции и скидки компаний</h3>
+				<div class="gorod_promo_list">
+			<?
+				if (count($promoes))
+				{
+					$sch = 0;
+					foreach ($promoes as $row)
 					{
-						$sch = 0;
-						foreach ($promoes as $row)
-						{
-							$sch++;
-				?>
-						<div class="gorod_promo_item">
-							<a href="/<?=$this->city->simbol_name?>/company/<?=$row->url?>"><?=$row->name?></a> - <?=$row->promo?>
-						</div>
-				<?
-							if ($sch >= 3) break;
-						}
+						$sch++;
+			?>
+					<div class="gorod_promo_item">
+						<a href="/<?=$this->city->simbol_name?>/company/<?=$row->url?>"><?=$row->name?></a> - <?=$row->promo?>
+					</div>
+			<?
+						if ($sch >= 3) break;
 					}
-					else
-						echo '<div class="gorod_promo_item_no">Информация отсутствует</div>';
-				?>
-						<div class="gorod_promo_item">
-							<a href="/<?=$this->city->simbol_name?>/promo/list">Все акции</a>
-						</div>
+				}
+				else
+					echo '<div class="gorod_promo_item_no">Информация отсутствует</div>';
+			?>
+					<div class="gorod_promo_item">
+						<a href="/<?=$this->city->simbol_name?>/promo/list">Все акции</a>
 					</div>
 				</div>
-				<div class="gorod_review_wrapper">
-					<h3>Отзывы покупателей</h3>
-					<div class="gorod_review_list">
-				<?
-					if (count($this->city->reviews))
+			</div>
+			<div class="gorod_review_wrapper">
+				<h3>Отзывы покупателей</h3>
+				<div class="gorod_review_list">
+			<?
+				if (count($this->city->reviews))
+				{
+					$sch = 0;
+					foreach ($this->city->reviews as $row)
 					{
-						$sch = 0;
-						foreach ($this->city->reviews as $row)
-						{
-							$sch++;
-							$date = explode(".",date('d.m.Y', $row->add_time));
-							switch ($date[1]){
-								case 1: $m='января'; break;
-								case 2: $m='февраля'; break;
-								case 3: $m='марта'; break;
-								case 4: $m='апреля'; break;
-								case 5: $m='мая'; break;
-								case 6: $m='июня'; break;
-								case 7: $m='июля'; break;
-								case 8: $m='августа'; break;
-								case 9: $m='сентября'; break;
-								case 10: $m='октября'; break;
-								case 11: $m='ноября'; break;
-								case 12: $m='декабря'; break;
-							};
-				?>
-						<div class="gorod_review_item <?=($row->mark == 1 ? '__good' : ($row->mark == -1 ? '__bad' : ''))?>">
-							<div class="gorod_review_item_header">
-								<span><?=$row->name?></span> | <i><?=$date[0]*1.0?> <?=$m?> <?=$date[2]?></i><br />отзыв о фирме <span><a href="/<?=$this->city->simbol_name?>/company/<?=$row->company->url?>"><?=$row->company->name?></a></span>
-							</div>
-							<div class="gorod_review_item_content">
-								<p><?=$row->text?></p>
-							</div>
+						$sch++;
+						$date = explode(".",date('d.m.Y', $row->add_time));
+						switch ($date[1]){
+							case 1: $m='января'; break;
+							case 2: $m='февраля'; break;
+							case 3: $m='марта'; break;
+							case 4: $m='апреля'; break;
+							case 5: $m='мая'; break;
+							case 6: $m='июня'; break;
+							case 7: $m='июля'; break;
+							case 8: $m='августа'; break;
+							case 9: $m='сентября'; break;
+							case 10: $m='октября'; break;
+							case 11: $m='ноября'; break;
+							case 12: $m='декабря'; break;
+						};
+			?>
+					<div class="gorod_review_item <?=($row->mark == 1 ? '__good' : ($row->mark == -1 ? '__bad' : ''))?>">
+						<div class="gorod_review_item_header">
+							<span><?=$row->name?></span> | <i><?=$date[0]*1.0?> <?=$m?> <?=$date[2]?></i><br />отзыв о фирме <span><a href="/<?=$this->city->simbol_name?>/company/<?=$row->company->url?>"><?=$row->company->name?></a></span>
 						</div>
-				<?
-							if ($sch >= 3) break;
-						}
+						<div class="gorod_review_item_content">
+							<p><?=$row->text?></p>
+						</div>
+					</div>
+			<?
+						if ($sch >= 3) break;
 					}
-					else
-						echo '<div class="gorod_review_item_no">Информация отсутствует</div>';
-				?>
-						<div class="gorod_review_item_all">
-							<a href="/<?=$this->city->simbol_name?>/review/list">Все отзывы</a>
-						</div>
+				}
+				else
+					echo '<div class="gorod_review_item_no">Информация отсутствует</div>';
+			?>
+					<div class="gorod_review_item_all">
+						<a href="/<?=$this->city->simbol_name?>/review/list">Все отзывы</a>
 					</div>
 				</div>
 			</div>

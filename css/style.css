@@ -16,6 +16,12 @@ body {
 	font-weight: 300;
 	color: #383838;
 }
+.mb-0 {
+	margin-bottom: 0 !important;
+}
+.mt-0 {
+	margin-top: 0 !important;
+}
 .background_body {
 	width: 990px;
 	margin: 0 auto;
@@ -231,6 +237,7 @@ body {
 	border:2px solid #117848;
 	border-radius: 20px;
 	padding:20px;
+	margin-bottom: 30px;
 }
 	.sidebar_city_list h2{
 		font-size:13px;
@@ -364,6 +371,7 @@ body {
 	border-radius: 20px;
 	padding:20px;
 	font-size: 13px;
+	margin-bottom: 30px;
 }
 .sidebar_company_list_sort{
 }
@@ -576,6 +584,7 @@ body {
 	padding: 0;
 	font-size: 13px;
 	overflow: hidden;
+	margin-bottom: 30px;
 }
 	.sidebar_news_list h2{
 		font-size:13px;
@@ -758,6 +767,7 @@ body {
 	border-radius: 4px;
 	background: #F9FAFA;
 	font-size: 13px;
+	margin-bottom: 30px;
 }
 .sidebar_news_view_company{
 }
@@ -907,6 +917,7 @@ body {
 	padding: 0;
 	font-size: 13px;
 	overflow: hidden;
+	margin-bottom: 30px;
 }
 	.sidebar_review_list h2{
 		font-size:13px;
@@ -1236,6 +1247,7 @@ body {
 	background: #F9FAFA;
 	font-size: 13px;
 	padding-bottom: 20px;
+	margin-bottom: 30px;
 }
 	.sidebar_company_view h2{
 		font-size:13px;
@@ -1494,6 +1506,8 @@ body {
 /*-----------------------------------------*/
 /*------------------index------------------*/
 .content_index_statistics{
+	border: 1px solid #E4E4E4;
+	border-radius: 5px;
 }
 	.content_index_statistics h2{
 		font-size:13px;
@@ -1502,21 +1516,7 @@ body {
 		background: #EFEEEE;
 		padding:20px 20px 20px 15px;
 		border-left: 5px solid #F60;
-		border-radius: 4px;
-	}
-	.content_index_statistics ul{
-		margin-top: 20px;
-		list-style: none;
-	}
-	.content_index_statistics li{
-		display: block;
-		padding-left:20px;
-		font-size: 16px;
-		line-height: 28px;
-		background:url(img/content_company_service_products.png) 0px 9px no-repeat;		
-	}
-	.content_index_statistics li span{
-		color: #F60;
+		border-radius: 4px 4px 0 0;
 	}
 .content_index_text{
 	margin-top: 30px;
@@ -1544,10 +1544,16 @@ body {
 		overflow:hidden;
 	}
 	.content_index_section li{
+		position: relative;
 		display:block;
 		float:left;
 		margin-bottom:20px;
 		margin-right:20px;
+	}
+	.content_index_section li span{
+		font-weight:500;
+		font-size:18px;
+		opacity: 0.5;
 	}
 	.content_index_section li a{
 		text-decoration:none;
@@ -1556,7 +1562,7 @@ body {
 		border:1px solid #636363;
 		padding:10px 0 0 15px;
 		color:#636363;
-		height:205px;
+		height:220px;
 			-webkit-box-sizing: border-box;
 			-moz-box-sizing: border-box;
 		box-sizing: border-box;
@@ -1712,7 +1718,6 @@ body {
 		text-decoration: underline;
 	}
 .content_gorod_price_wrapper{
-	margin-top: 40px;
 	border: 1px solid #E4E4E4;
 	border-radius: 5px;
 }
@@ -1873,14 +1878,9 @@ body {
 	.gorod_price_text_company_stars span.__stars_good{
 		background: transparent url(img/stars.png) no-repeat 0px -36px;
 	}
-/*----------promo & review------------*/	
-.content_gorod_promo_review_wrapper{
-	margin-top: 30px;
-	overflow: hidden;
-}
+/*----------promo & review------------*/
 .gorod_promo_wrapper{
-	float: left;
-	width: 45%;
+	margin-top: 30px;
 	border: 1px solid #E4E4E4;
 	border-radius: 5px;
 }
@@ -1922,8 +1922,7 @@ body {
 		color: #383838;
 	}
 .gorod_review_wrapper{
-	float: right;
-	width: 50%;
+	margin-top: 30px;
 	border: 1px solid #E4E4E4;
 	border-radius: 5px;
 }
@@ -2759,7 +2758,7 @@ body {
 /*-----------------------------------------*/
 /*-------------market href-----------------*/
 .sidebar_market_href{
-	margin-top: 30px;
+	margin-bottom: 30px;
 	border:1px solid #E4E4E4;
 	border-radius: 4px;
 	font-size: 13px;
@@ -2781,7 +2780,6 @@ body {
 		top: -10px;
 	}
 .sidebar_market_href_tiz{
-	margin-top: 30px;
 	border:1px solid #E4E4E4;
 	border-radius: 4px;
 	font-size: 13px;
@@ -2789,6 +2787,7 @@ body {
 	padding: 25px 0 20px 20px;
 	position: relative;
 	overflow: hidden;
+	margin-bottom: 30px;
 }
 	.sidebar_market_href_tiz a{
 		font-size: 10px;
@@ -2928,6 +2927,7 @@ body {
 	background: #F9FAFA;
 	font-size: 13px;
 	padding-bottom: 20px;
+	margin-bottom: 30px;
 }
 	.sidebar_page_view h2{
 		font-size:13px;
@@ -2967,6 +2967,7 @@ body {
 	background: #F9FAFA;
 	font-size: 13px;
 	padding-bottom: 20px;
+	margin-bottom: 30px;
 }
 	.sidebar_page_list h2{
 		font-size:13px;
@@ -3108,10 +3109,17 @@ body {
 
 .page-description {
 	padding: 15px 20px 15px 40px;
-	margin: 20px 0;
-	border-radius: 10px;
 	background: url(img/blockquote.png) no-repeat 7px 15px #fafafa;
 }
+	.page-description.__radius{
+		border-radius: 10px;
+	}
+	.page-description.__mt{
+		margin-top: 20px;
+	}
+	.page-description.__mb{
+		margin-top: 20px;
+	}
 	.page-description * {
 		font-size: 13px !important;
 		line-height: 22px !important;

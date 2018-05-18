@@ -55,44 +55,45 @@
 					<p>Большое внимание уделено актуализации информации. В связи с этим в разделе <a href="/<?=$this->city->simbol_name?>/news/list">Новости</a> мы ежедневно следим за изменениями, происшедшими в компаниях города.</p>
 					<p>Если у вас есть дополнительные пожелания к проекту, мы всегда готовы их рассмотреть.</p>
 				</div>
-				<ul>
-					<li>
-						Количество городов - <span><?=$count_city?></span>
-					</li>
-					<li>
-						Количество компаний - <span><?=$count_company?></span>
-					</li>
-					<li>
-						Количество акций и скидок - <span><?=$count_promo?></span>
-					</li>
-					<li>
-						Количество отзывов - <span><?=$count_review?></span>
-					</li>
-					<li>
-						Количество новостей - <span><?=$count_news?></span>
-					</li>
-				</ul>
 			</div>
 			<div class="content_index_section">
 				<h3>Разделы портала</h3>
 				<ul>
 					<li class="__city">
-						<a href="/city/list">Города</a>
+						<a href="/city/list">
+							Города
+							<span><?=$count_city?></span>
+						</a>
 					</li>
 					<li class="__company">
-						<a href="/<?=$this->city->simbol_name?>/company/list">Компании</a>
+						<a href="/<?=$this->city->simbol_name?>/company/list">
+							Компании
+							<span><?=$count_company?></span>
+						</a>
 					</li>
 					<li class="__news">
-						<a href="/<?=$this->city->simbol_name?>/news/list">Новости</a>
+						<a href="/<?=$this->city->simbol_name?>/news/list">
+							Новости
+							<span><?=$count_news?></span>
+						</a>
 					</li>
 					<li class="__promo">
-						<a href="/<?=$this->city->simbol_name?>/promo/list">Акции и скидки</a>
+						<a href="/<?=$this->city->simbol_name?>/promo/list">
+							Акции и скидки
+							<span><?=$count_promo?></span>
+						</a>
 					</li>
 					<li class="__prices">
-						<a href="/<?=$this->city->simbol_name?>/prices/list">Цены</a>
+						<a href="/<?=$this->city->simbol_name?>/prices/list">
+							Цены
+							<span><?=$count_price?></span>
+						</a>
 					</li>
 					<li class="__review">
-						<a href="/<?=$this->city->simbol_name?>/review/list">Отзывы</a>
+						<a href="/<?=$this->city->simbol_name?>/review/list">
+							Отзывы
+							<span><?=$count_review?></span>
+						</a>
 					</li>
 				</ul>
 			</div>
