@@ -77,8 +77,8 @@
 			</div>
 			<div class="menu">
 				<ul>
-					<li class="<?=(Yii::app()->controller->id == 'city' ? 'active' : '')?>">
-						<a href="/city/list">ГОРОДА</a>
+					<li class="<?=(Yii::app()->controller->action->id == 'index_gorod' ? 'active' : '')?>">
+						<a href="/<?=$this->city->simbol_name?>"><?=$this->city->gorod?></a>
 					</li>
 					<li class="<?=(Yii::app()->controller->id == 'company' && Yii::app()->controller->action->id != 'prices' && Yii::app()->controller->action->id != 'promo' ? 'active' : '')?>">
 						<a href="/<?=$this->city->simbol_name?>/company/list">КОМПАНИИ</a>

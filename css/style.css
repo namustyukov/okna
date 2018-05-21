@@ -90,7 +90,8 @@ body {
 		display: inline-block;
 		color: #fff;
 		border-radius: 5px 5px 0 0;
-		padding: 0 20px;
+		padding: 0 15px;
+		text-transform: uppercase;
 		line-height: 55px;
 			-moz-transition-property: background-color;
 			-o-transition-property: background-color;
