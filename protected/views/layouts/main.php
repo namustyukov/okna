@@ -101,10 +101,11 @@
 				</ul>
 			</div>
 			<?php
-				if ($this->city->id == '24' && 0){
-					echo '<div class="main_banner">
-						<a target="_blank" class="out_link" data-url="http://kuhni-zp.ru/stoleshnica?utm_source=oknaorg&utm_medium=baner_verh&utm_campaign=shkaf_v_podarok"></a>
-						<span></span>
+				if ($this->city->id == 80) {
+					echo '<div class="top_banner_img">
+						<a target="_blank" class="out_link" data-url="http://окнапремиум56.рф/" ref="nofollow">
+							<img src="/images/okna-premium-banner.gif" alt="Окна Премиум - Каждое второе и последующее окно со скидкой - 500 рублей!" />
+						</a>
 					</div>';
 				}
 			?>

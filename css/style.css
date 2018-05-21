@@ -3107,6 +3107,17 @@ body {
 		display: inline-block;
 	}
 
+.top_banner_img {
+	border-radius: 20px;
+	margin-top: 20px;
+	text-align: center;
+	overflow: hidden;
+	position: relative;
+}
+	.top_banner_img img {
+		max-width: 100%;
+	}
+
 .page-description {
 	padding: 15px 20px 15px 40px;
 	background: url(img/blockquote.png) no-repeat 7px 15px #fafafa;
