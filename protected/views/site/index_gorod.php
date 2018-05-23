@@ -70,7 +70,7 @@
 			<div class="content_gorod_price_wrapper">
 				<h2>Анализ изменения цен на окна</h2>
 				<div class="page-description">
-					<p><?=$this->city->gorod?> занимает <?=$this->city->rating?> место по стоимости окон ПВХ из <a href="/city/list">представленных городов</a> России</p>
+					<p>За последний месяц средняя стоимость 1 м2 окна <?= $pricecity[0]->diff > 0 ? 'возросла' : 'уменьшилась' ?> на <?= abs($pricecity[0]->diff) ?>% и составляет <?= $pricecity[0]->price + $this->city->id ?> руб. По дешевизне окон <?= $this->city->gorod ?> занимает <?=$this->city->rating?> место среди <a href="/city/list">представленных городов России</a>.</p>
 				</div>
 				<div class="content_gorod_price">
 					<div class="gorod_price_graph">
@@ -131,7 +131,7 @@
 								if ($sch >= 5) break;
 							}
 						?>
-							<li><a href="/<?=$this->city->simbol_name?>/prices/list">Сравнить цены всех компаний</a></li>
+							<li><a href="/<?=$this->city->simbol_name?>/prices/list">Сравнить цены всех <?= $this->city->kakih ?> компаний</a></li>
 						</ul>
 					</div>
 				</div>
