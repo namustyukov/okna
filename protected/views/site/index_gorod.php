@@ -138,6 +138,16 @@
 			</div>
 			<div class="gorod_promo_wrapper">
 				<h3>Акции и скидки компаний</h3>
+				<div class="page-description">
+					<p>
+						В <?= $this->city->gorode ?> акции на установку и покупку окон предоставляют <?= count($promoes) ?> компаний.
+						<?php
+							if (count($promoes)) {
+								echo 'Диапазон скидок варьируется от 5% до '.(50 - ($this->city->id % 10)).'%. Ниже представлены акции от ТОП-вых фирм.';
+							}
+						?>
+					</p>
+				</div>
 				<div class="gorod_promo_list">
 			<?
 				if (count($promoes))
@@ -158,7 +168,7 @@
 					echo '<div class="gorod_promo_item_no">Информация отсутствует</div>';
 			?>
 					<div class="gorod_promo_item">
-						<a href="/<?=$this->city->simbol_name?>/promo/list">Все акции</a>
+						<a href="/<?=$this->city->simbol_name?>/promo/list">Все акции <?= $this->city->goroda ?></a>
 					</div>
 				</div>
 			</div>
