@@ -137,7 +137,9 @@ class SiteController extends Controller
 			return $company->bad == 0;
 		});
 
-		$reviewsGroupBad = $reviewsGroup;
+		$reviewsGroupBad = array_filter($reviewsGroup, function($company) {
+			return $company->bad > 0;
+		});
 		usort($reviewsGroupBad, function($v1, $v2) {
 			if ($v1->bad == $v2->bad) {
 				return 0;

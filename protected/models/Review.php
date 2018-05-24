@@ -100,7 +100,7 @@ class Review extends CActiveRecord
 			WHERE company.city_id = {$this->city->id}
 				AND review.company_id = company.id
 			GROUP BY company.id
-			ORDER BY 5 desc, 2 asc
+			ORDER BY 5 desc, 6 desc, 2 asc
 			"
 		);
 		$dataReader=$command->query(); 

@@ -174,6 +174,38 @@
 			</div>
 			<div class="gorod_review_wrapper">
 				<h3>Отзывы покупателей</h3>
+				<?php if (count($reviewsGroup)) { ?>
+				<div class="page-description">
+					<?php
+						$goodText = '';
+						if (count($reviewsGroupGood)) {
+							$goodText = 'Только положительные отзывы у фирм ';
+
+							$key = 0;
+							foreach ($reviewsGroupGood as $company) {
+								$goodText .= '<a href="/'.$this->city->simbol_name.'/company/'.$company->url.'">'.$company->name.'</a>, ';
+								$key++;
+								if ($key >= 3) break;
+							}
+
+							if (count($reviewsGroupGood) > 3) {
+								$goodText .= 'и еще '.(count($reviewsGroupGood) - 3).' компаний.';
+							}
+						}
+
+						$badText = '';
+						if (count($reviewsGroupBad) >= 2) {
+							$badText = 'Больше всего отрицательных отзывов у 
+								<a href="/'.$this->city->simbol_name.'/company/'.$reviewsGroupBad[0]->url.'">'.$reviewsGroupBad[0]->name.'</a> и
+								<a href="/'.$this->city->simbol_name.'/company/'.$reviewsGroupBad[1]->url.'">'.$reviewsGroupBad[1]->name.'</a>.
+							';
+						}
+					?>
+					<p>
+						Наиболее обсуждаемая компания <?= $this->city->goroda ?> - <a href="/<?=$this->city->simbol_name?>/company/<?=$reviewsGroup[0]->url?>"><?=$reviewsGroup[0]->name?></a> (<?=$reviewsGroup[0]->good?> положительных и <?=$reviewsGroup[0]->bad?> отрицательных отзыва). <?=$goodText?> <?=$badText?> Ниже представлены самые свежие отзывы на окна <?= $this->city->kakih ?> компаний.
+					</p>
+				</div>
+				<?php } ?>
 				<div class="gorod_review_list">
 			<?
 				if (count($reviews))
@@ -214,7 +246,7 @@
 					echo '<div class="gorod_review_item_no">Информация отсутствует</div>';
 			?>
 					<div class="gorod_review_item_all">
-						<a href="/<?=$this->city->simbol_name?>/review/list">Все отзывы</a>
+						<a href="/<?=$this->city->simbol_name?>/review/list">Все отзывы в <?= $this->city->gorode ?></a>
 					</div>
 				</div>
 			</div>

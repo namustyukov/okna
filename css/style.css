@@ -1918,6 +1918,7 @@ body {
 	margin-bottom: 0;
 	padding-top: 0;
 	border-top: none;
+	text-align: center;
 }
 	.gorod_promo_item:last-child a{
 		color: #383838;
@@ -1999,6 +2000,7 @@ body {
 	margin-top: 10px;
 }
 .gorod_review_item_all{
+	text-align: center;
 }
 	.gorod_review_item_all a{
 		color: #383838;
