@@ -100,7 +100,7 @@
 						<ul>
 						<?
 							if (!count($companies_price))
-								$companies_price = $this->city->company;
+								$companies_price = $companies;
 							$sch = 0;
 							foreach ($companies_price as $row)
 							{
@@ -109,7 +109,7 @@
 									<?
 										if ($row->rating)
 										{
-											$count = count($this->city->company);
+											$count = count($companies);
 											$count_stars = 5 - floor($row->rating/ceil($count/6));
 											echo '<div class="gorod_price_text_company_stars">';
 											for ($j=0; $j < 5; $j++)
@@ -176,10 +176,10 @@
 				<h3>Отзывы покупателей</h3>
 				<div class="gorod_review_list">
 			<?
-				if (count($this->city->reviews))
+				if (count($reviews))
 				{
 					$sch = 0;
-					foreach ($this->city->reviews as $row)
+					foreach ($reviews as $row)
 					{
 						$sch++;
 						$date = explode(".",date('d.m.Y', $row->add_time));
@@ -250,7 +250,7 @@
 					</div>
 				<?
 					$sch = 0;
-					foreach ($this->city->company as $row)
+					foreach ($companies as $row)
 					{
 				?>
 						<div class="content_gorod_company_row">
@@ -331,9 +331,6 @@
 						<a href="/<?=$this->city->simbol_name?>/company/list">Все фирмы <?=$this->city->goroda?></a>
 					</div>
 				</div>
-			</div>
-			<div class="content_gorod_text_bottom">
-				<?=$text?>
 			</div>
 		</div>
 	</div>

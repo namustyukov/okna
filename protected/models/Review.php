@@ -89,6 +89,28 @@ class Review extends CActiveRecord
 		return $rows;
 	}
 
+	public function getCompanyGroupMark() {
+		$connection=Yii::app()->db;
+		$command=$connection->createCommand(
+			"SELECT DISTINCT company.id, company.name, company.url, company.rating,
+				COUNT(review.id) as total,
+				(SELECT COUNT(id) FROM review WHERE company_id = company.id AND mark = 1) as good,
+                (SELECT COUNT(id) FROM review WHERE company_id = company.id AND mark = -1) as bad
+			FROM company, review
+			WHERE company.city_id = {$this->city->id}
+				AND review.company_id = company.id
+			GROUP BY company.id
+			ORDER BY 5 desc, 2 asc
+			"
+		);
+		$dataReader=$command->query(); 
+		$rows = array();
+		foreach($dataReader as $key=>$row) {
+			$rows[$key] = (object) $row;
+		}
+		return $rows;
+	}
+
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 *

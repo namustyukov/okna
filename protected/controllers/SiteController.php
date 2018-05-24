@@ -72,12 +72,14 @@ class SiteController extends Controller
 	
 	public function actionIndex_gorod()
 	{
+		// news
 		$criteria_news = new CDbCriteria();
 		$criteria_news->condition = "city_id = ".$this->city->id;
 		$criteria_news->order = "date_create DESC";
 		$criteria_news->limit = 10;
 		$news = News::model()->findAll($criteria_news);
 
+		// promo
 		$promoes = Company::model()->findAll(array(
 			'condition' => 'length(promo) > 0 and city_id = '.$this->city->id,
 			'order' => 'rating ASC',
@@ -95,6 +97,7 @@ class SiteController extends Controller
 			$row->save();
 		}*/
 
+		// price
 		$criteria = new CDbCriteria();
 		$criteria->condition = "region_id = ".$this->city->region->id;
 		$criteria->order = "date_create DESC";
@@ -126,35 +129,25 @@ class SiteController extends Controller
 			'order' => 'rating ASC',
 		));
 
-		/*$text = "
-			<p>В ".$this->city->gorode." представлено ".count($this->city->company)." оконных компаний. Помимо фирм, осуществляющих продажу и установку пластиковых окон, имеются компании специализирующиеся на следующих услугах:</p>
-			<ul>
-				<li>ремонт окон,</li>
-				<li>остекление балконов и лоджий,</li>
-				<li>изготовление оконной фурнитуры,</li>
-				<li>установка и монтаж окон,</li>
-				<li>изготовление деревянных окон,</li>
-				<li>производство алюминиевых оконных конструкций и других.</li>
-			</ul>
-			<p>Одним из показателей качества окон является профиль конструкции. Среди ".$this->city->kakih." фирм проведена оценка используемых профилей ПВХ:</p>
-			<ul>
-				<li>Exprof (Экспроф),</li>
-				<li>Salamander (Саламандер),</li>
-				<li>KBE (КБЕ),</li>
-				<li>Proplex (Проплекс),</li>
-				<li>Rehau (Рехау),</li>
-				<li>Veka (Века),</li>
-				<li>Trocal (Трокаль),</li>
-				<li>Novotex (Новотекс),</li>
-				<li>Roto (Рото) и другие.</li>
-			</ul>
-			<p>Выявлено, что значительный перевес у профиля немецкой марки Rehau. Более ".rand(60,80)."% всех фирм ".$this->city->goroda." используют именно его. Вы можете в этом убедиться. На странице каждой из представленных на сайте компаний имеется информация о том, какие марки оконных профилей используются в производстве.</p>
-			<p>В разделе Цены и Акции Вы сможете подобрать недорогие окна для дома или квартиры. Однако если для Вас важно качество окон, адекватность цен, репутация и надежность фирмы, то Вы можете сделать свой выбор на основе рейтинга компаний ".$this->city->goroda.", составленного специалистами ОКНАОРГ.РУ.</p>
-			<p>Если вопрос выбора фирмы все равно остается актуальным, то Вам несомненно помогут мнения и советы других покупателей из ".$this->city->goroda.". Ознакомиться с ними можно в разделе Отзывы.</p>
-			<p>Надеемся, что с нашей помощью, Вы подберете для себя самые оптимальные предложения от ведущих ".$this->city->kakih." компаний, которые удовлетворят все Ваши потребности.</p>
-		";*/
+		// review
+		$reviews = $this->city->reviews;
+		$reviewsGroup = Review::getCompanyGroupMark();
 
-		$text = "";
+		$reviewsGroupGood = array_filter($reviewsGroup, function($company) {
+			return $company->bad == 0;
+		});
+
+		$reviewsGroupBad = $reviewsGroup;
+		usort($reviewsGroupBad, function($v1, $v2) {
+			if ($v1->bad == $v2->bad) {
+				return 0;
+			}
+
+			return ($v1->bad < $v2->bad) ? -1 : 1;
+		});
+
+		// company
+		$companies = $this->city->company;
 
 		$this->pageTitle = "Пластиковые окна и конструкции ПВХ в {$this->city->gorode}";
 		$this->meta_k = "пластиковые окна в {$this->city->gorode}, стоимость окна в {$this->city->gorode}, продажа окон в {$this->city->gorode}, фирмы, акции, отзывы клиентов";
@@ -162,11 +155,15 @@ class SiteController extends Controller
 
 		$this->render('index_gorod',array(
 			'promoes' => $promoes,
-			'text' => $text,
 			'news' => $news,
 			'pricecity' => $pricecity,
 			'max_price' => $max_price,
 			'companies_price' => $companies_price,
+			'companies' => $companies,
+			'reviews' => $reviews,
+			'reviewsGroup' => $reviewsGroup,
+			'reviewsGroupGood' => $reviewsGroupGood,
+			'reviewsGroupBad' => $reviewsGroupBad,
 		));
 	}
 	
