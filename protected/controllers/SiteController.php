@@ -143,7 +143,7 @@ class SiteController extends Controller
 				return 0;
 			}
 
-			return ($v1->bad < $v2->bad) ? -1 : 1;
+			return ($v1->bad > $v2->bad) ? -1 : 1;
 		});
 
 		// company
