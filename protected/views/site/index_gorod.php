@@ -143,7 +143,7 @@
 						В <?= $this->city->gorode ?> акции на установку и покупку окон предоставляют <?= count($promoes) ?> компаний.
 						<?php
 							if (count($promoes)) {
-								echo 'Диапазон скидок варьируется от 5% до '.(50 - ($this->city->id % 10)).'%. Ниже представлены акции от ТОП-вых фирм.';
+								echo 'Диапазон скидок варьируется от 5% до '.(50 - ($this->city->id % 10)).'%. Ниже представлены акции от ведущих фирм города.';
 							}
 						?>
 					</p>
@@ -202,7 +202,7 @@
 						}
 					?>
 					<p>
-						Наиболее обсуждаемая компания <?= $this->city->goroda ?> - <a href="/<?=$this->city->simbol_name?>/company/<?=$reviewsGroup[0]->url?>"><?=$reviewsGroup[0]->name?></a> (<?=$reviewsGroup[0]->good?> положительных и <?=$reviewsGroup[0]->bad?> отрицательных отзыва). <?=$goodText?> <?=$badText?> Ниже представлены самые свежие отзывы на окна <?= $this->city->kakih ?> компаний.
+						Наиболее обсуждаемая компания <?= $this->city->goroda ?> - <a href="/<?=$this->city->simbol_name?>/company/<?=$reviewsGroup[0]->url?>"><?=$reviewsGroup[0]->name?></a> (<?=$reviewsGroup[0]->good?> положительных и <?=$reviewsGroup[0]->bad?> отрицательных отзыва). <?=$goodText?> <?=$badText?> Ниже представлены самые свежие отзывы.
 					</p>
 				</div>
 				<?php } ?>
@@ -268,6 +268,9 @@
 			<? } ?>
 			<div class="content_gorod_company">
 				<h3>Список компаний из ТОП-10 по <?=$this->city->gorodu?></h3>
+				<div class="page-description">
+					<p><?= $this->city->gorod ?> занимает <?= $ratingCityCompanies ?> место по количеству оконных компаний в России. Ниже представлен список самых успешных фирм по рейтингу ОКНАОРГ.</p>
+				</div>
 				<div class="content_gorod_company_list">
 					<div class="content_gorod_company_row_header">
 						<div class="gorod_company_name_header">

@@ -90,6 +90,25 @@ class City extends CActiveRecord
 		);
 	}
 
+	public function getCityRating() {
+		$connection=Yii::app()->db;
+		$command=$connection->createCommand(
+			"SELECT DISTINCT city.id, count(company.id) as count_company
+			FROM company, city
+			WHERE company.city_id = city.id
+			GROUP BY city.id
+			ORDER BY 2 DESC
+			"
+		);
+		$dataReader=$command->query();
+
+		foreach($dataReader as $key => $row) {
+			if ($row['id'] == $this->city->id) break;
+		}
+
+		return $key;
+	}
+
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 *

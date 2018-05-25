@@ -149,6 +149,7 @@ class SiteController extends Controller
 		});
 
 		// company
+		$ratingCityCompanies = City::getCityRating();
 		$companies = $this->city->company;
 
 		$this->pageTitle = "Пластиковые окна и конструкции ПВХ в {$this->city->gorode}";
@@ -166,6 +167,7 @@ class SiteController extends Controller
 			'reviewsGroup' => $reviewsGroup,
 			'reviewsGroupGood' => $reviewsGroupGood,
 			'reviewsGroupBad' => $reviewsGroupBad,
+			'ratingCityCompanies' => $ratingCityCompanies,
 		));
 	}
 	
