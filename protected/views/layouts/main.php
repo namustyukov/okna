@@ -101,7 +101,7 @@
 				</ul>
 			</div>
 			<?php
-				if ($this->city->id == 80) {
+				if (0) {
 					echo '<div class="top_banner_img">
 						<a target="_blank" class="out_link" data-url="http://окнапремиум56.рф/" ref="nofollow">
 							<img src="/images/okna-premium-banner.gif" alt="Окна Премиум - Каждое второе и последующее окно со скидкой - 500 рублей!" />
