@@ -75,6 +75,9 @@
 					<a href="/"><img src="<?php echo Yii::app()->request->baseUrl; ?>/img/logo.png" width="354" height="73" alt="ОКНАОРГ - портал о пластиковых окнах в России" /></a>
 				</div>
 			</div>
+			<div class="mob-menu-open">
+				<div class="mob-menu-open__buger"></div>
+			</div>
 			<div class="menu">
 				<ul>
 					<li class="<?=(Yii::app()->controller->action->id == 'index_gorod' ? 'active' : '')?>">

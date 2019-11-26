@@ -46,7 +46,7 @@ body {
 	border-radius: 5px;
 	background: #76C304;
 	border-bottom: 2px solid #589203;
- 	/*background: rgba(52, 86, 79, 0.7);*/
+	/*background: rgba(52, 86, 79, 0.7);*/
 	cursor:pointer;
 }
 	.city_check:hover {
@@ -550,7 +550,7 @@ body {
 		max-width: 46px;
 		margin-left: -4px;
 		display: inline-block;
-  		vertical-align: middle;
+		vertical-align: middle;
 	}
 .company_list_item_info{
 	overflow: hidden;
@@ -1166,11 +1166,11 @@ body {
 }
 .popup_out{
 	position:fixed;
-    left: 0;
-    top: 0;
+	left: 0;
+	top: 0;
 	right:0;
 	bottom:0;
-    z-index: 1000;
+	z-index: 1000;
 	background:rgba(0,0,0,.8);
 }
 .review_create_success{
@@ -1192,10 +1192,10 @@ body {
 		display: block;
 	}
 .review_create_success_button{
-    padding: 22px 25px;
-    font-size: 16px;
-    text-align: center;
-    cursor: pointer;
+	padding: 22px 25px;
+	font-size: 16px;
+	text-align: center;
+	cursor: pointer;
 	border-radius: 0 0 5px 5px;
 	background: #76C304;
 	border-bottom: 2px solid #589203;
@@ -1223,13 +1223,13 @@ body {
 		display: block;
 	}
 .review_create_fail_button{
-    padding: 22px 25px;
-    font-size: 16px;
-    color: #ffffff;
-    background-color: #ec4b4b;
-    border-radius: 0 0 5px 5px;
-    text-align: center;
-    cursor: pointer;
+	padding: 22px 25px;
+	font-size: 16px;
+	color: #ffffff;
+	background-color: #ec4b4b;
+	border-radius: 0 0 5px 5px;
+	text-align: center;
+	cursor: pointer;
 }
 	.review_create_fail_button:hover{
 		background-color: #B51F1F;
@@ -2089,7 +2089,7 @@ body {
 		max-width: 46px;
 		margin-left: -4px;
 		display: inline-block;
-  		vertical-align: middle;
+		vertical-align: middle;
 	}
 .gorod_company_name_info{
 	overflow: hidden;
@@ -2377,11 +2377,11 @@ body {
 /*--------------------feedback-------------------*/
 .popup_out_feedback{
 	position:fixed;
-    left: 0;
-    top: 0;
+	left: 0;
+	top: 0;
 	right:0;
 	bottom:0;
-    z-index: 1000;
+	z-index: 1000;
 	background:rgba(0,0,0,.8);
 }
 .feedback_form{
@@ -2457,11 +2457,11 @@ body {
 }
 .feedback_submit{
 	padding: 22px 25px;
-    font-size: 16px;
-    color: #ffffff;
-    text-align: center;
-    cursor: pointer;
-    position: relative;
+	font-size: 16px;
+	color: #ffffff;
+	text-align: center;
+	cursor: pointer;
+	position: relative;
 	border-radius: 0 0 5px 5px;
 	background: #76C304;
 	border-bottom: 2px solid #589203;
@@ -2509,13 +2509,13 @@ body {
 		display: block;
 	}
 .feedback_create_success_button{
-    padding: 22px 25px;
-    font-size: 16px;
-    color: #ffffff;
-    background: #76C304;
+	padding: 22px 25px;
+	font-size: 16px;
+	color: #ffffff;
+	background: #76C304;
 	border-bottom: 2px solid #589203;
-    text-align: center;
-    cursor: pointer;
+	text-align: center;
+	cursor: pointer;
 	border-radius: 0 0 5px 5px;
 }
 	.feedback_create_success_button:hover{
@@ -2525,11 +2525,11 @@ body {
 /*-----------------change city-------------*/
 .popup_out_city{
 	position:fixed;
-    left: 0;
-    top: 0;
+	left: 0;
+	top: 0;
 	right:0;
 	bottom:0;
-    z-index: 1000;
+	z-index: 1000;
 	background:rgba(0,0,0,.8);
 }
 .popup_city{
@@ -3068,8 +3068,8 @@ body {
 	}
 	.company-new-info a.__delete{
 		color: #ffffff;
-    	background-color: #ec4b4b;
-    	border-bottom: 2px solid #B51F1F;
+		background-color: #ec4b4b;
+		border-bottom: 2px solid #B51F1F;
 	}
 	.company-new-info a.__delete:hover {
 		background-color: #B51F1F;
@@ -3152,3 +3152,325 @@ body {
 		padding-left: 15px;
 		background: url(img/content_company_service_row.png) 0px 7px no-repeat;
 	}
+.mob-menu-open {
+	padding: 10px 0 10px 10px;
+	background: #4C8E4D;
+	border-radius: 5px;
+	display: none;
+}
+.mob-menu-open__buger {
+	height: 35px;
+	position: relative;
+	width: 50px;
+	border-radius: 5px;
+	border: 1px solid #ffffff;
+	cursor: pointer;
+}
+.mob-menu-open__buger:before {
+	content: '';
+	display: block;
+	height: 1px;
+	background-color: #ffffff;
+	position: absolute;
+	width: 30px;
+	top: 12px;
+	left: 10px;
+}
+.mob-menu-open__buger:after {
+	content: '';
+	display: block;
+	height: 1px;
+	background-color: #ffffff;
+	position: absolute;
+	width: 30px;
+	bottom: 12px;
+	left: 10px;
+}
+
+@media (max-width: 768px) {
+	.background_body {
+		width: auto;
+	}
+
+	.wrapper {
+		width: auto;
+		padding: 0 15px;
+	}
+
+	.city_check {
+		float: none;
+		display: inline-block;
+		margin-top: 15px;
+	}
+
+	.breadcrump {
+		padding: 0;
+	}
+
+	.header_name {
+		padding: 25px 0;
+	}
+
+	.header_top {
+		height: auto;
+		margin-bottom: 15px;
+	}
+
+	.mob-menu-open {
+		display: block;
+	}
+
+	.menu {
+		height: auto;
+		font-size: 14px;
+		line-height: 45px;
+		border-radius: 0 0 5px 5px;
+		margin-top: -5px;
+		display: none;
+	}
+
+	.menu ul li {
+		border-radius: 5px;
+		float: none;
+	}
+
+	.menu ul li a {
+		line-height: 45px;
+	}
+
+	.sidebar {
+		float: none !important;
+		margin: 30px 0 15px !important;
+		width: auto !important;
+	}
+
+	.content_index_section li {
+		margin: 0 15px 15px 0 !important; 
+	}
+
+	.content_index_city_col {
+		float: none;
+		width: auto;
+	}
+
+	.content_index_city_col_row {
+		width: 49%;
+		display: inline-block;
+	}
+
+	.content_index_city_list {
+		margin-bottom: 15px;
+	}
+
+	.page_name h1 {
+		font-size: 22px;
+		line-height: 28px;
+	}
+
+	.footer {
+		width: auto;
+	}
+
+	.footer_left {
+		display: none;
+	}
+
+	.footer_market_tiz {
+		width: auto;
+	}
+
+	/* ---- feedback ----- */
+
+	.feedback_form {
+		width: auto;
+		left: 10px;
+		right: 10px;
+		margin-left: 0;
+	}
+
+	.feedback_form_close {
+		top: -25px;
+		right: 10px;
+	}
+
+	/* ------------------- */
+	/* ------ gotod ------ */
+
+	.content_gorod_company_row_header {
+		display: none;
+	}
+
+	.gorod_company_name {
+		float: none;
+		width: auto;
+		margin-bottom: 10px;
+	}
+
+	.gorod_company_service {
+		float: none;
+		width: auto;
+		margin-bottom: 10px;
+	}
+
+	.gorod_company_price {
+		float: none;
+		width: auto;
+		font-weight: bold;
+	}
+
+	/* ------------------- */
+	/* -- company list --- */
+
+	.company_list_column {
+		padding-left: 0;
+	}
+
+	.company_list_column_col {
+		float: none;
+		width: auto;
+	}
+
+	/* ------------------- */
+	/* -- popup city ----- */
+
+	.popup_city_close {
+		top: -30px;
+		right: 10px;
+	}
+
+	.popup_city {
+		width: auto;
+		top: 45px;
+		left: 10px;
+		right: 10px;
+		bottom: 10px;
+		margin-left: 0;
+	}
+
+	.popup_city_column {
+		max-height: none;
+		height: 100%;
+	}
+
+	.popup_city_column_col {
+		float: none;
+		width: auto;
+	}
+
+	/* ------------------- */
+	/* -- company view --- */
+
+	.company_view_shortinfo .shortinfo_left {
+		display: block;
+		border-bottom: none;
+		font-weight: bold;
+		padding-bottom: 0;
+	}
+
+	.company_view_shortinfo .shortinfo_right {
+		display: block;
+	}
+
+	.review_form {
+		padding: 10px;
+	}
+
+	/* ------------------- */
+	/* ----- article ----- */
+
+	.content_news_item_icon {
+		display: none;
+	}
+
+	.content_news_item_preview {
+		padding-left: 0;
+	}
+
+	/* ------------------- */
+	/* ------ prices ----- */
+
+	.content_prices_list tr:first-child td {
+		display: none;
+	}
+
+	.content_prices_list tr:first-child td:first-child {
+		display: block;
+		border-bottom: 1px solid #CCC !important;
+	}
+
+	.content_prices_list td {
+		width: auto !important;
+		display: block;
+		border-bottom: none !important;
+	}
+
+	.content_prices_list td:last-child {
+		border-bottom: 1px solid #CCC !important;
+	}
+
+	.prices_item_rating {
+		padding-bottom: 0;
+	}
+
+	.prices_item_name {
+		padding: 0;
+	}
+
+	.prices_item_price {
+		padding-top: 0;
+		font-weight: bold;
+	}
+
+	.prices_graph_wrapper {
+		width: auto;
+		overflow: auto;
+	}
+
+	/* ------------------- */
+	/* ------ promo ------ */
+
+	.content_promo_list tr:first-child td {
+		display: none;
+	}
+
+	.content_promo_list tr:first-child td:first-child {
+		display: block;
+		border-bottom: 1px solid #CCC !important;
+	}
+
+	.content_promo_list td {
+		width: auto !important;
+		display: block;
+		border-bottom: none !important;
+	}
+
+	.content_promo_list td:last-child {
+		border-bottom: 1px solid #CCC !important;
+	}
+
+	.promo_item_rating {
+		padding-bottom: 0;
+	}
+
+	.promo_item_name {
+		padding: 0;
+	}
+
+	.promo_item_price {
+		padding-top: 0;
+		font-weight: bold;
+	}
+
+	/* ------------------- */
+	/* ------- city ------ */
+
+	.city_list_column {
+		padding-left: 0;
+	}
+
+	.city_list_column_col {
+		width: 50%;
+	}
+
+	/* ------------------- */
+}
