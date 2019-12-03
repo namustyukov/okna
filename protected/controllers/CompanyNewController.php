@@ -140,7 +140,7 @@ class CompanyNewController extends Controller
 			$model->is_accept = 1;
 			$model->save(false);
 
-			$data = 'Добрый день! Ваша компания размещена на сайте oknaorg.ru. Ссылка - <a href="http://oknaorg.ru/'.$company->city->simbol_name.'/company/'.$company->url.'">'.$company->name.'</a>';
+			$data = 'Добрый день! Ваша компания размещена на сайте oknaorg.ru. Ссылка - <a href="https://oknaorg.ru/'.$company->city->simbol_name.'/company/'.$company->url.'">'.$company->name.'</a>';
 			$data .= '<br><br>Данное письмо сгенерировано автоматически, просьба на него не отвечать. Если у Вас появились вопросы, то свяжитесь с нами по адресу oknaorg@mail.ru .';
 			$data .= '<br><br>--<br>С уважением,<br>Oknaorg.ru - городской портал об окнах';
 			$to = "<{$model->user_email}>" ;

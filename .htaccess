@@ -14,6 +14,10 @@ RewriteCond %{REQUEST_FILENAME} !-d
 # otherwise forward it to index.php
 RewriteRule . index.php
 
+RewriteEngine on
+RewriteCond %{ENV:HTTPS} !on
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [NC,R=301,L]
+
 AddDefaultCharset utf-8
 AddCharset utf-8 *
 <IfModule mod_charset.c>
@@ -25,9 +29,9 @@ AddCharset utf-8 *
 Options +FollowSymLinks
 RewriteEngine on
 RewriteCond %{HTTP_HOST} ^www.oknaorg.ru
-RewriteRule (.*) http://oknaorg.ru/$1 [R=301,L]
+RewriteRule (.*) https://oknaorg.ru/$1 [R=301,L]
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
-RewriteRule ^index\.html$ http://oknaorg.ru/ [R=301,L]
+RewriteRule ^index\.html$ https://oknaorg.ru/ [R=301,L]
 
 php_flag display_errors off
 php_value error_reporting 0

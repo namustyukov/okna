@@ -4,7 +4,7 @@ if (preg_match ("/www/i", $_SERVER['HTTP_HOST']))
 {
 	$str=str_replace('www.', '', $_SERVER['HTTP_HOST']);
 	header("HTTP/1.1 301 Moved Permanently");
-	header ('Location: http://'.$str.$_SERVER['REQUEST_URI']);
+	header ('Location: https://'.$str.$_SERVER['REQUEST_URI']);
 	die();
 }
 

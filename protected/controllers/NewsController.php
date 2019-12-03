@@ -121,7 +121,7 @@ class NewsController extends Controller
 		{
 			$param = str_replace($_GET['page'], 5, $_SERVER['REQUEST_URI']);
 			header("HTTP/1.1 301 Moved Permanently");
-			header ("Location: http://".$_SERVER['HTTP_HOST'].$param);
+			header ("Location: https://".$_SERVER['HTTP_HOST'].$param);
 			die();
 		}
 		$criteria = new CDbCriteria();
