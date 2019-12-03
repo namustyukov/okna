@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: http://oknaorg.ru/sitemap.xml
+Sitemap: https://oknaorg.ru/sitemap.xml
