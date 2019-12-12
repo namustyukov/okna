@@ -204,6 +204,7 @@ class Company extends CActiveRecord
 		$connection=Yii::app()->db;
 		$command=$connection->createCommand(
 			"SELECT id,
+			priority,
 			(
 				IF(LENGTH(address) > 0, 1, 0) +
 				IF(LENGTH(phone) > 0, 1, 0) +
@@ -250,7 +251,7 @@ class Company extends CActiveRecord
 			LENGTH(about)
 			FROM company
 			WHERE company.city_id = {$city_id}
-			order by 2 DESC, 3 DESC, 4 DESC, 5 DESC, 6 DESC, 7 DESC, 8 DESC, 9 DESC, 10 DESC, 11 DESC, 12 DESC, 13 DESC
+			order by 2 DESC, 3 DESC, 4 DESC, 5 DESC, 6 DESC, 7 DESC, 8 DESC, 9 DESC, 10 DESC, 11 DESC, 12 DESC, 13 DESC, 14 DESC
 			"
 		);
 		$dataReader=$command->query(); 
