@@ -138,6 +138,10 @@ $this->menu=array(
 								echo '<a target="_blank" class="out_link" data-url="'.$model->site.'">'.$model->site.'</a>, ';
 								echo '<a target="_blank" class="out_link" data-url="http://первыйоконныйдвор.рф/">http://первыйоконныйдвор.рф/</a>';
 							}
+							elseif ($model->id == 6498)
+							{
+								echo '<a target="_blank" class="out_link" data-url="https://oknasar64.ru">https://oknasar64.ru</a>';
+							}
 							else
 								echo $model->site;
 						?>
