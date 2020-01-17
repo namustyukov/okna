@@ -63,6 +63,13 @@ class CompanyController extends Controller
 	{
 		$model = $this->loadModelUrl();
 
+		$command = Yii::app()->db->createCommand();
+		$command->update(
+			'company',
+			['views' => $model->views + 1],
+			'id = :id', [':id' => $model->id]
+		);
+
 		if ($model->city_id != $this->city->id)
 			$this->city = City::model()->findByPk($model->city_id);
 
@@ -76,9 +83,11 @@ class CompanyController extends Controller
 
 		if ($model->id == 66 || $model->id == 701)
 			$about = $model->about;
+
 		$this->pageTitle = "Окна от фирмы {$model->name} в {$this->city->gorode}";
 		$this->meta_k = "{$model->name} в {$this->city->gorode}, цены фирмы {$model->name}, сайт у {$model->name}, ПВХ от {$model->name}, отзывы о {$model->name}";
 		$this->meta_d = "{$model->name} в {$this->city->gorode} - общая информация о компании, контактные данные и официальный сайт, цены на пластиковые окна и услуги, отзывы клиентов.";
+
 		$this->render('view',array(
 			'model' => $model,
 			'about' => $about,

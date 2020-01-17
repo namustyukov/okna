@@ -48,7 +48,7 @@ class Company extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('name', 'required'),
-			array('city_id', 'numerical', 'integerOnly'=>true),
+			array('city_id, views', 'numerical', 'integerOnly'=>true),
 			array('name, full_name, address, phone, email, site, worktime, online, date_found, certificate, guarantee, payment, price, promo, production_way, url', 'length', 'max'=>500),
 			array('logo, donor_site', 'length', 'max'=>300),
 			array('koord_x, koord_y', 'length', 'max'=>50),
