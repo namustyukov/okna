@@ -294,4 +294,81 @@ class SiteController extends Controller
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
+
+	public function actionUpdatecompany()
+	{
+		$cities = City::model()->findAll(array('order'=>'gorod'));
+
+		echo 'count cities = '.count($cities).'<br>';
+
+		foreach ($cities as $keyCity => $city) {
+			$city_id = $city->id;
+			$connection=Yii::app()->db;
+			$command=$connection->createCommand(
+				"SELECT id,
+				priority,
+				(
+					IF(LENGTH(address) > 0, 1, 0) +
+					IF(LENGTH(phone) > 0, 1, 0) +
+					IF(LENGTH(email) > 0, 1, 0) +
+					IF(LENGTH(site) > 0, 1, 0) +
+					IF(LENGTH(site) > 0, 1, 0) +
+					IF(LENGTH(site) > 0, 1, 0) +
+					IF(LENGTH(worktime) > 0, 1, 0) +
+					IF(LENGTH(online) > 0, 1, 0) +
+					IF(LENGTH(online) > 0, 1, 0) +
+					IF(LENGTH(date_found) > 0, 1, 0) +
+					IF(LENGTH(certificate) > 0, 1, 0) +
+					IF(LENGTH(certificate) > 0, 1, 0) +
+					IF(LENGTH(certificate) > 0, 1, 0) +
+					IF(LENGTH(guarantee) > 0, 1, 0) +
+					IF(LENGTH(guarantee) > 0, 1, 0) +
+					IF(LENGTH(guarantee) > 0, 1, 0) +
+					IF(LENGTH(payment) > 0, 1, 0) +
+					IF(LENGTH(payment) > 0, 1, 0) +
+					IF(LENGTH(payment) > 0, 1, 0) +
+					IF(LENGTH(price) > 0, 1, 0) +
+					IF(LENGTH(price) > 0, 1, 0) +
+					IF(LENGTH(promo) > 0, 1, 0) +
+					IF(LENGTH(promo) > 0, 1, 0) +
+					IF(LENGTH(promo) > 0, 1, 0) +
+					IF(LENGTH(production_way) > 0, 1, 0) +
+					IF(LENGTH(production_way) > 0, 1, 0) +
+					IF(LENGTH(production_way) > 0, 1, 0) +
+					IF(LENGTH(about) > 0, 1, 0) +
+					(select count(id) from company_service where company_id = company.id) +
+					(select COUNT(id) from review where company_id = company.id AND mark = 1) -
+					(select COUNT(id) from review where company_id = company.id AND mark = -1)
+				) as info,
+				IF(LENGTH(promo) > 0, 1, 0),
+				IF(LENGTH(payment) > 0, 1, 0),
+				IF(LENGTH(guarantee) > 0, 1, 0),
+				IF(LENGTH(certificate) > 0, 1, 0),
+				IF(LENGTH(online) > 0, 1, 0),
+				IF(LENGTH(price) > 0, 1, 0),
+				IF(LENGTH(production_way) > 0, 1, 0),
+				(select count(id) from company_service where company_id = company.id),
+				IF(LENGTH(site) > 0, 1, 0),
+				(select count(id) from news where company_id = company.id),
+				LENGTH(about)
+				FROM company
+				WHERE company.city_id = {$city_id}
+				order by 2 DESC, 3 DESC, 4 DESC, 5 DESC, 6 DESC, 7 DESC, 8 DESC, 9 DESC, 10 DESC, 11 DESC, 12 DESC, 13 DESC, 14 DESC
+				"
+			);
+			$dataReader=$command->query(); 
+			$rows = array();
+			foreach($dataReader as $key=>$row) {
+				$rows[$key] = (object) $row;
+				$command_upd = $connection->createCommand("update company set rating = ".($key + 1)." where id = {$rows[$key]->id}");
+				$command_upd->query();
+			}
+
+			echo $keyCity.'. '.$city->gorod.'<br>';
+		}
+
+		echo 'End<br>';
+
+		Yii::app()->end();
+	}
 }
