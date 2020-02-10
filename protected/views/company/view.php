@@ -281,8 +281,8 @@ $this->menu=array(
 					</div>
 				</div>
 				<div class="content_review_list">
-				<?
-					foreach ($model->review as $row)
+				<?php
+					foreach ($model->review as $key => $row)
 					{
 						$date = explode(".",date('d.m.Y', $row->add_time));
 						switch ($date[1]){
@@ -308,8 +308,16 @@ $this->menu=array(
 							<p><?=$row->text?></p>
 						</div>
 					</div>
-				<? } ?>
+				<?php
+						if ($key >= 14) break;
+					}
+				?>
 				</div>
+			<?php if (count($model->review) > 15) { ?>
+				<div class="content_review_list__more" data-id="<?= $model->id ?>">
+					<span>Показать еще</span>
+				</div>
+			<?php } ?>
 			</div>
 		<?php if ($about) { ?>
 			<div class="content_company_about">

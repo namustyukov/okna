@@ -39,7 +39,7 @@ class CompanyController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view', 'prices', 'promo'),
+				'actions'=>array('index','view', 'prices', 'promo', 'ajaxloadreview'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -53,6 +53,55 @@ class CompanyController extends Controller
 				'users'=>array('*'),
 			),
 		);
+	}
+
+	public function actionAjaxloadreview()
+	{
+		$companyId = $_POST['companyId'];
+		$page = $_POST['page'];
+		$minIndex = ($page - 1) * 15;
+
+		$model = Company::model()->findByPk($companyId);
+
+		$reviews = array_slice($model->review, $minIndex, 15);
+
+		$html = '';
+
+		foreach ($reviews as $review) {
+			$date = explode(".",date('d.m.Y', $review->add_time));
+
+			switch ($date[1]){
+				case 1: $m='января'; break;
+				case 2: $m='февраля'; break;
+				case 3: $m='марта'; break;
+				case 4: $m='апреля'; break;
+				case 5: $m='мая'; break;
+				case 6: $m='июня'; break;
+				case 7: $m='июля'; break;
+				case 8: $m='августа'; break;
+				case 9: $m='сентября'; break;
+				case 10: $m='октября'; break;
+				case 11: $m='ноября'; break;
+				case 12: $m='декабря'; break;
+			};
+
+			$html .= '<div class="content_review_item '.($review->mark == 1 ? '__good' : ($review->mark == -1 ? '__bad' : '')).'">
+						<div class="content_review_item_header">
+							<span>'.$review->name.'</span> | '.$date[0]*1.0.' '.$m.' '.$date[2].' | отзыв о фирме <span>'.$review->company->name.'</span>
+						</div>
+						<div class="content_review_item_content">
+							<p>'.$review->text.'</p>
+						</div>
+					</div>';
+		}
+
+		$data = [
+			'html' => $html,
+			'count' => count($reviews),
+		];
+
+		echo CJSON::encode($data);
+		Yii::app()->end();
 	}
 
 	/**

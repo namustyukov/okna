@@ -119,6 +119,39 @@ $(document).ready(function(){
 		$('.review_create_success').hide();
 		$('.popup_out').hide();
 	});
+
+	// показать еще
+
+	(function() {
+		var page = 1;
+
+		$('.content_review_list__more').click(function(){
+			var companyId = $(this).data('id');
+			var btn = this;
+
+			$(btn).addClass('__loader');
+
+			$.post(
+				'/company/ajaxloadreview/',
+				{
+					companyId : companyId,
+					page: page + 1,
+				},
+				function (data){
+					$(btn).removeClass('__loader');
+					$('.content_review_list').append(data.html);
+
+					page = page + 1;
+
+					if (data.count < 15) {
+						$(btn).hide();
+					}
+				},
+				'json'
+			);
+		});
+	})();
+
 	/*-----------------------------------------------------------------*/
 	/*------------------------отправка сообщения----------------------*/
 	$('.footer_feedback').click(function(){
