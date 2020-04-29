@@ -53,6 +53,12 @@ $this->menu=array(
 						mktime( 0, 0, 0, 4, 01, 2019 ) => date("Y-m-d", mktime( 0, 0, 0, 4, 01, 2019 )),
 						mktime( 0, 0, 0, 5, 01, 2019 ) => date("Y-m-d", mktime( 0, 0, 0, 5, 01, 2019 )),
 						mktime( 0, 0, 0, 6, 01, 2019 ) => date("Y-m-d", mktime( 0, 0, 0, 6, 01, 2019 )),
+						mktime( 0, 0, 0, 7, 01, 2019 ) => date("Y-m-d", mktime( 0, 0, 0, 7, 01, 2019 )),
+						mktime( 0, 0, 0, 8, 01, 2019 ) => date("Y-m-d", mktime( 0, 0, 0, 8, 01, 2019 )),
+						mktime( 0, 0, 0, 9, 01, 2019 ) => date("Y-m-d", mktime( 0, 0, 0, 9, 01, 2019 )),
+						mktime( 0, 0, 0, 10, 01, 2019 ) => date("Y-m-d", mktime( 0, 0, 0, 10, 01, 2019 )),
+						mktime( 0, 0, 0, 11, 01, 2019 ) => date("Y-m-d", mktime( 0, 0, 0, 11, 01, 2019 )),
+						mktime( 0, 0, 0, 12, 01, 2019 ) => date("Y-m-d", mktime( 0, 0, 0, 12, 01, 2019 )),
 					),
                     array(
                       'options' => array(
