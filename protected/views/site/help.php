@@ -27,7 +27,7 @@ $this->menu=array(
 			</div>
 			<div class="content_help_form">
 				<div class="content_help_form_code">
-					<iframe src="https://money.yandex.ru/quickpay/shop-widget?writer=seller&targets=%D0%94%D0%BB%D1%8F%20%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8F%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0%20OKNAORG.RU&targets-hint=&default-sum=100&button-text=11&payment-type-choice=on&mobile-payment-type-choice=on&hint=&successURL=&quickpay=shop&account=410012410004842" width="423" height="222" frameborder="0" allowtransparency="true" scrolling="no"></iframe>
+					<iframe src="https://money.yandex.ru/quickpay/shop-widget?writer=seller&targets=%D0%94%D0%BB%D1%8F%20%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D1%8F%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0%20OKNAORG.RU&targets-hint=&default-sum=100&button-text=11&payment-type-choice=on&mobile-payment-type-choice=on&mail=on&hint=&successURL=&quickpay=shop&account=410013919362962" width="100%" height="222" frameborder="0" allowtransparency="true" scrolling="no"></iframe>
 				</div>
 			</div>
 		</div>
