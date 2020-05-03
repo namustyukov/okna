@@ -150,6 +150,13 @@ class City extends CActiveRecord
 		));
 	}
 	
+	public static function getList()
+	{
+		$list = self::model()->findAll(array('order'=>'gorod'));
+
+		return CHtml::listData($list, 'id', 'gorod');
+	}
+
 	public function beforeSave() {
 		$this->date_modify = NULL;
 		return parent::beforeSave();

@@ -50,7 +50,12 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'goroda',
 		'gorode',
 		'gorodu',
-		'region_id',
+		array(
+			'name' => 'region_id',
+			'type' => 'raw',
+			'value' => '$data->region->name',
+            'filter' => Region::getList(),
+        ),
 		'kakih',
 		/*
 		'kakie',
