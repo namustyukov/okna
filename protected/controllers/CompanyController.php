@@ -158,9 +158,15 @@ class CompanyController extends Controller
 		if(isset($_POST['Company']))
 		{
 			$model->attributes=$_POST['Company'];
+			$model->about = strip_tags($model->about, '<p><ul><li>');
+			$model->about = preg_replace("#(</?\w+)(?:\s(?:[^<>/]|/[^<>])*)?(/?>)#ui", '$1$2', $model->about);
+
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
+
+		Yii::app()->getClientScript()->registerScriptFile('/tiny_mce/tiny_mce.js');
+		Yii::app()->getClientScript()->registerScriptFile('/tiny_mce/init.js');
 
 		$this->render('create',array(
 			'model'=>$model,
@@ -182,9 +188,15 @@ class CompanyController extends Controller
 		if(isset($_POST['Company']))
 		{
 			$model->attributes=$_POST['Company'];
+			$model->about = strip_tags($model->about, '<p><ul><li>');
+			$model->about = preg_replace("#(</?\w+)(?:\s(?:[^<>/]|/[^<>])*)?(/?>)#ui", '$1$2', $model->about);
+
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
+
+		Yii::app()->getClientScript()->registerScriptFile('/tiny_mce/tiny_mce.js');
+		Yii::app()->getClientScript()->registerScriptFile('/tiny_mce/init.js');
 
 		$this->render('update',array(
 			'model'=>$model,

@@ -1,7 +1,7 @@
 	tinyMCE.init({
 		// General options
 		mode : "exact",
-		elements : "Page_content, CompanyNew_about",
+		elements : "Page_content, CompanyNew_about, Company_about",
 		theme : "advanced",
 		skin : "o2k7",
 		skin_variant : "silver",

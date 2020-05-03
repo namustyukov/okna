@@ -83,7 +83,7 @@ class City extends CActiveRecord
 			'kakom' => 'Каком',
 			'kakaya' => 'Какая',
 			'simbol_name' => 'URL',
-			'region_id' => 'Region',
+			'region_id' => 'Регион',
 			'koord_x' => 'Koord X',
 			'koord_y' => 'Koord Y',
 			'date_modify' => 'Date Modify',

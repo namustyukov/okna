@@ -104,20 +104,8 @@
 		<?php echo $form->error($model,'region_id'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'koord_x'); ?>
-		<?php echo $form->textField($model,'koord_x',array('size'=>50,'maxlength'=>50)); ?>
-		<?php echo $form->error($model,'koord_x'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'koord_y'); ?>
-		<?php echo $form->textField($model,'koord_y',array('size'=>50,'maxlength'=>50)); ?>
-		<?php echo $form->error($model,'koord_y'); ?>
-	</div>
-
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton('Сохранить'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
