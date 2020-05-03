@@ -52,10 +52,10 @@ class Company extends CActiveRecord
 			array('name, full_name, address, phone, email, site, worktime, online, date_found, certificate, guarantee, payment, price, promo, production_way, url', 'length', 'max'=>500),
 			array('logo, donor_site', 'length', 'max'=>300),
 			array('koord_x, koord_y', 'length', 'max'=>50),
-			array('about', 'safe'),
+			array('about, priority, views', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, name, full_name, address, phone, email, site, worktime, rating, online, date_found, certificate, guarantee, payment, price, promo, production_way, about, logo, city_id, donor_site, url, koord_x, koord_y, date_modify', 'safe', 'on'=>'search'),
+			array('id, name, full_name, address, phone, email, site, worktime, rating, online, date_found, certificate, guarantee, payment, price, promo, production_way, about, logo, city_id, donor_site, url, priority, views, koord_x, koord_y, date_modify', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -102,6 +102,9 @@ class Company extends CActiveRecord
 			'city_id' => 'Город',
 			'donor_site' => 'Откуда информация (донор)',
 			'url' => 'Url',
+			'rating' => 'Рейтинг',
+			'priority' => 'Приоритет',
+			'views' => 'Просмотров',
 			'koord_x' => 'Koord X',
 			'koord_y' => 'Koord Y',
 			'date_modify' => 'Date Modify',

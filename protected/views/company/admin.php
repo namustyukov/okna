@@ -63,6 +63,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		//'production_way',
 		//'about',
 		'logo',
+		'url',
 		array(
 			'name' => 'city_id',
 			'type' => 'raw',
@@ -70,8 +71,9 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
             'filter' => City::getList(),
         ),
 		//'donor_site',
-		'url',
 		'rating',
+		'priority',
+		'views',
 		//'koord_x',
 		//'koord_y',
 		// 'date_modify',
