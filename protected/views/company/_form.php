@@ -124,6 +124,18 @@
 	</div>
 
 	<div class="row">
+		<?php echo $form->labelEx($model,'url'); ?>
+		<?php echo $form->textField($model,'url',array('size'=>60,'maxlength'=>500)); ?>
+		<?php echo $form->error($model,'url'); ?>
+	</div>
+
+	<div class="row">
+		<label>Приоритет (компании с приоритетом всегда стоят выше остальных. Чем выше приоритет, тем выше положение компании в рейтинге)</label>
+		<?php echo $form->textField($model,'priority',array('size'=>60,'maxlength'=>500)); ?>
+		<?php echo $form->error($model,'priority'); ?>
+	</div>
+
+	<div class="row">
 		<?php echo $form->labelEx($model,'about'); ?>
 		<?php echo $form->textArea($model,'about',array('rows'=>6, 'cols'=>50)); ?>
 		<?php echo $form->error($model,'about'); ?>
@@ -146,24 +158,6 @@
 		<?php echo $form->labelEx($model,'donor_site'); ?>
 		<?php echo $form->textField($model,'donor_site',array('size'=>60,'maxlength'=>300)); ?>
 		<?php echo $form->error($model,'donor_site'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'url'); ?>
-		<?php echo $form->textField($model,'url',array('size'=>60,'maxlength'=>500)); ?>
-		<?php echo $form->error($model,'url'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'koord_x'); ?>
-		<?php echo $form->textField($model,'koord_x',array('size'=>50,'maxlength'=>50)); ?>
-		<?php echo $form->error($model,'koord_x'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'koord_y'); ?>
-		<?php echo $form->textField($model,'koord_y',array('size'=>50,'maxlength'=>50)); ?>
-		<?php echo $form->error($model,'koord_y'); ?>
 	</div>
 
 	<div class="row buttons">
