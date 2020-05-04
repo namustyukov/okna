@@ -49,7 +49,12 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		//'url',
 		//'type',
 		//'url_info',
-		'company_id',
+		array(
+			'name' => 'company_id',
+			'type' => 'raw',
+			'value' => '$data->company->name',
+			'filter' => News::getCompanyOptions(),
+        ),
 		array(
 			'name' => 'city_id',
 			'type' => 'raw',
@@ -65,6 +70,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
         ),
 		array(
 			'class'=>'CButtonColumn',
+			'template'=>'{update} {delete}',
 		),
 	),
 )); ?>

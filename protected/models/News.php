@@ -79,8 +79,10 @@ class News extends CActiveRecord
 	public function getCompanyOptions() {
 		$connection=Yii::app()->db;
 		$where_city = '';
-		if ($this->city)
-			$where_city = ' and city.id = '.$this->city->id;
+		
+		// if ($this->city)
+		// 	$where_city = ' and city.id = '.$this->city->id;
+		
 		$command=$connection->createCommand(
 			"SELECT distinct company.id, company.name, city.gorod
 			FROM company, city
