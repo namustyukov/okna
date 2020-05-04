@@ -31,7 +31,7 @@
 		?>
 		<?php echo $form->error($model,'company_id'); ?>
 	</div>
-	
+	<!-- 
 	<div class="row">
 		<?php echo $form->labelEx($model,'type'); ?>
 		<?php echo CHtml::activeDropDownList($model, 'type',
@@ -44,13 +44,13 @@
 		?>
 		<?php echo $form->error($model,'type'); ?>
 	</div>
-	
+	 -->
 	<div class="row">
 		<?php echo $form->labelEx($model,'preview'); ?>
 		<?php echo $form->textArea($model,'preview',array('rows'=>6, 'cols'=>50)); ?>
 		<?php echo $form->error($model,'preview'); ?>
 	</div>
-
+<!-- 
 	<div class="row">
 		<?php echo $form->labelEx($model,'title'); ?>
 		<?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>500)); ?>
@@ -86,9 +86,9 @@
 		<?php echo $form->textField($model,'url_info',array('size'=>60,'maxlength'=>500)); ?>
 		<?php echo $form->error($model,'url_info'); ?>
 	</div>
-
+ -->
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton('Сохранить'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
