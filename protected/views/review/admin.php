@@ -46,14 +46,33 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'filter'=>$model,
 	'columns'=>array(
 		'id',
-		'text',
+		array(
+			'name' => 'company_id',
+			'type' => 'raw',
+			'value' => '$data->company->name',
+			'filter' => News::getCompanyOptions(),
+        ),
+		array(
+			'name' => 'city_id',
+			'type' => 'raw',
+			'value' => '$data->city->gorod',
+            'filter' => City::getList(),
+        ),
 		'name',
-		'mark',
-		'company_id',
-		'city_id',
-		'news_id',
+		array(
+			'name' => 'mark',
+			'type' => 'raw',
+			'value' => '$data->getMark()',
+            'filter' => Review::$MARK_LIST,
+        ),
+        'text',
+        array(
+			'name' => 'add_time',
+			'type' => 'raw',
+			'value' => 'date("d.m.Y", $data->add_time)',
+        ),
+		//'news_id',
 		/*
-		'add_time',
 		'date_modify',
 		*/
 		array(

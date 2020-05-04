@@ -22,12 +22,23 @@ $this->menu=array(
 	'data'=>$model,
 	'attributes'=>array(
 		'id',
+		array(
+			'name' => 'Дата добавления',
+			'value' => date("d.m.Y", $model->add_time),
+        ),
+        array(
+			'label' => 'Компания',
+			'value' => $model->company->name,
+        ),
+		array(
+			'label' => 'Город',
+			'value' => $model->city->gorod,
+        ),
+        'name',
+        array(
+			'label' => 'Оценка',
+			'value' => $model->getMark(),
+        ),
 		'text',
-		'name',
-		'mark',
-		'company_id',
-		'news_id',
-		'add_time',
-		'date_modify',
 	),
 )); ?>

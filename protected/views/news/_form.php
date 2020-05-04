@@ -18,6 +18,19 @@
 	<p class="note">Fields with <span class="required">*</span> are required.</p>
 
 	<?php echo $form->errorSummary($model); ?>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'city_id'); ?>
+		<?php echo CHtml::activeDropDownList($model, 'city_id',
+					CHtml::listData(City::model()->findAll(array('order'=>'gorod')), 'id', 'gorod'),
+                    array(
+                      'options' => array(
+                            $model->city_id=>array('selected'=>true),
+                      ))
+                    );
+                ?>
+		<?php echo $form->error($model,'city_id'); ?>
+	</div>
 	
 	<div class="row">
 		<?php echo $form->labelEx($model,'company_id'); ?>

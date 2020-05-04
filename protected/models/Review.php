@@ -15,6 +15,12 @@
  */
 class Review extends CActiveRecord
 {
+	public static $MARK_LIST = array(
+		'0' => 'Нейтральная',
+		'1' => 'Положительная',
+		'-1' => 'Отрицательная',
+	);
+
 	/**
 	 * @return string the associated database table name
 	 */
@@ -67,7 +73,7 @@ class Review extends CActiveRecord
 			'company_id' => 'Компания',
 			'city_id' => 'Город',
 			'news_id' => 'Новость',
-			'add_time' => 'Add Time',
+			'add_time' => 'Дата добавления',
 			'date_modify' => 'Date Modify',
 		);
 	}
@@ -109,6 +115,11 @@ class Review extends CActiveRecord
 			$rows[$key] = (object) $row;
 		}
 		return $rows;
+	}
+
+	public function getMark()
+	{
+		return self::$MARK_LIST[(string) $this->mark];
 	}
 
 	/**
