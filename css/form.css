@@ -165,6 +165,11 @@ div.wide form .errorMessage
 	margin: 0 0 0 110px;
 }
 
+.row--img img {
+	max-width: 300px;
+	max-height: 300px;
+}
+
 .form.company_new_form
 {
 	font-size: 14px;

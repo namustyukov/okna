@@ -37,7 +37,7 @@ class Page extends CActiveRecord
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, 	url, 	date_create, 	title, 	keywords, 	description, 	preview, 	content, 	view_count, 	url_info, 	type, 	logo, 	company_id, 	city_id', 'safe'),
-			array('id, 	url, 	date_create, 	title, 	keywords, 	description, 	preview, 	content, 	view_count, 	url_info, 	type, 	logo, 	company_id, 	city_id', 'safe', 'on'=>'search'),
+			array('id, 	url, 	title, 	keywords, 	description, 	preview, 	content, 	view_count, 	url_info, 	type, 	logo, 	company_id, 	city_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -63,11 +63,11 @@ class Page extends CActiveRecord
 			'id' => 'ID',
 			'url' => 'Url',
 			'date_create' => 'Дата создания',
-			'title' => 'Title',
-			'keywords' => 'Keywords',
-			'description' => 'Description',
-			'preview' => 'Preview',
-			'content' => 'Content',
+			'title' => 'Заголовок',
+			'keywords' => 'Ключевые слова (meta-keywords)',
+			'description' => 'Описание (meta-description)',
+			'preview' => 'Краткое описание (анонс)',
+			'content' => 'Текст статьи',
 			'view_count' => 'Количество просмотров',
 			'url_info' => 'Откуда информация (донор)',
 			'type' => 'Тип',

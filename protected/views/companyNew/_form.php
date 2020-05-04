@@ -150,7 +150,7 @@
 		<?php echo $form->error($model,'about'); ?>
 	</div>
 
-	<div class="row">
+	<div class="row row--img">
 		<?php echo CHtml::activeLabelEx($model,'logo'); ?><br />
 		<?php echo CHtml::activeFileField($model,'logo'); ?>
 		<?php echo CHtml::error($model,'logo'); ?>
@@ -158,7 +158,7 @@
 			if ($model->logo)
 			{
 				echo "<h4>Текущая картинка</h4>";
-				echo '<img src="'.Yii::app()->request->baseUrl.'/img/'.$model->logo.'"';
+				echo '<img src="'.Yii::app()->request->baseUrl.'/img/'.$model->logo.'">';
 			}
 		?>
 	</div>
