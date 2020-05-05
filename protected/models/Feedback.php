@@ -60,6 +60,10 @@ class Feedback extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
+			'name' => 'Имя',
+			'email' => 'Email',
+			'message' => 'Сообщение',
+			'url' => 'URL страницы, с которой отправлено сообщение',
 		);
 	}
 

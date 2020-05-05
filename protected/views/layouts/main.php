@@ -41,7 +41,7 @@
 			array('label'=>'Статьи', 'url'=>array('/page/admin'), 'visible'=>!Yii::app()->user->isGuest),
 			array('label'=>'Новости', 'url'=>array('/news/admin'), 'visible'=>!Yii::app()->user->isGuest),
 			array('label'=>'Отзывы', 'url'=>array('/review/admin'), 'visible'=>!Yii::app()->user->isGuest),
-			array('label'=>'Сообщения', 'url'=>array('/feedback/admin'), 'visible'=>!Yii::app()->user->isGuest),
+			array('label'=>'Сообщения в поддержку', 'url'=>array('/feedback/admin'), 'visible'=>!Yii::app()->user->isGuest),
 			array('label'=>'Цены', 'url'=>array('/pricecity/admin'), 'visible'=>!Yii::app()->user->isGuest),
 			/*array('label'=>'Парсинг URL', 'url'=>array('/companyParse/url'), 'visible'=>!Yii::app()->user->isGuest),
 			array('label'=>'Парсинг компаний', 'url'=>array('/companyParse/company'), 'visible'=>!Yii::app()->user->isGuest),
