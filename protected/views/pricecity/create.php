@@ -32,33 +32,25 @@ $this->menu=array(
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
+		<?php
+			$time = strtotime(date("Y-m-01"));
+		?>
 		<?php echo $form->labelEx($model,'date_create'); ?>
 		<?php echo CHtml::activeDropDownList($model, 'date_create',
 					array(
-						mktime( 0, 0, 0, 1, 01, 2018 ) => date("Y-m-d", mktime( 0, 0, 0, 1, 01, 2018 )),
-						mktime( 0, 0, 0, 2, 01, 2018 ) => date("Y-m-d", mktime( 0, 0, 0, 2, 01, 2018 )),
-						mktime( 0, 0, 0, 3, 01, 2018 ) => date("Y-m-d", mktime( 0, 0, 0, 3, 01, 2018 )),
-						mktime( 0, 0, 0, 4, 01, 2018 ) => date("Y-m-d", mktime( 0, 0, 0, 4, 01, 2018 )),
-						mktime( 0, 0, 0, 5, 01, 2018 ) => date("Y-m-d", mktime( 0, 0, 0, 5, 01, 2018 )),
-						mktime( 0, 0, 0, 6, 01, 2018 ) => date("Y-m-d", mktime( 0, 0, 0, 6, 01, 2018 )),
-						mktime( 0, 0, 0, 7, 01, 2018 ) => date("Y-m-d", mktime( 0, 0, 0, 7, 01, 2018 )),
-						mktime( 0, 0, 0, 8, 01, 2018 ) => date("Y-m-d", mktime( 0, 0, 0, 8, 01, 2018 )),
-						mktime( 0, 0, 0, 9, 01, 2018 ) => date("Y-m-d", mktime( 0, 0, 0, 9, 01, 2018 )),
-						mktime( 0, 0, 0, 10, 01, 2018 ) => date("Y-m-d", mktime( 0, 0, 0, 10, 01, 2018 )),
-						mktime( 0, 0, 0, 11, 01, 2018 ) => date("Y-m-d", mktime( 0, 0, 0, 11, 01, 2018 )),
-						mktime( 0, 0, 0, 12, 01, 2018 ) => date("Y-m-d", mktime( 0, 0, 0, 12, 01, 2018 )),
-						mktime( 0, 0, 0, 1, 01, 2019 ) => date("Y-m-d", mktime( 0, 0, 0, 1, 01, 2019 )),
-						mktime( 0, 0, 0, 2, 01, 2019 ) => date("Y-m-d", mktime( 0, 0, 0, 2, 01, 2019 )),
-						mktime( 0, 0, 0, 3, 01, 2019 ) => date("Y-m-d", mktime( 0, 0, 0, 3, 01, 2019 )),
-						mktime( 0, 0, 0, 4, 01, 2019 ) => date("Y-m-d", mktime( 0, 0, 0, 4, 01, 2019 )),
-						mktime( 0, 0, 0, 5, 01, 2019 ) => date("Y-m-d", mktime( 0, 0, 0, 5, 01, 2019 )),
-						mktime( 0, 0, 0, 6, 01, 2019 ) => date("Y-m-d", mktime( 0, 0, 0, 6, 01, 2019 )),
-						mktime( 0, 0, 0, 7, 01, 2019 ) => date("Y-m-d", mktime( 0, 0, 0, 7, 01, 2019 )),
-						mktime( 0, 0, 0, 8, 01, 2019 ) => date("Y-m-d", mktime( 0, 0, 0, 8, 01, 2019 )),
-						mktime( 0, 0, 0, 9, 01, 2019 ) => date("Y-m-d", mktime( 0, 0, 0, 9, 01, 2019 )),
-						mktime( 0, 0, 0, 10, 01, 2019 ) => date("Y-m-d", mktime( 0, 0, 0, 10, 01, 2019 )),
-						mktime( 0, 0, 0, 11, 01, 2019 ) => date("Y-m-d", mktime( 0, 0, 0, 11, 01, 2019 )),
-						mktime( 0, 0, 0, 12, 01, 2019 ) => date("Y-m-d", mktime( 0, 0, 0, 12, 01, 2019 )),
+						strtotime('-12 month', $time) => date("Y-m-d", strtotime('-12 month', $time)),
+						strtotime('-11 month', $time) => date("Y-m-d", strtotime('-11 month', $time)),
+						strtotime('-10 month', $time) => date("Y-m-d", strtotime('-10 month', $time)),
+						strtotime('-9 month', $time) => date("Y-m-d", strtotime('-9 month', $time)),
+						strtotime('-8 month', $time) => date("Y-m-d", strtotime('-8 month', $time)),
+						strtotime('-7 month', $time) => date("Y-m-d", strtotime('-7 month', $time)),
+						strtotime('-6 month', $time) => date("Y-m-d", strtotime('-6 month', $time)),
+						strtotime('-5 month', $time) => date("Y-m-d", strtotime('-5 month', $time)),
+						strtotime('-4 month', $time) => date("Y-m-d", strtotime('-4 month', $time)),
+						strtotime('-3 month', $time) => date("Y-m-d", strtotime('-3 month', $time)),
+						strtotime('-2 month', $time) => date("Y-m-d", strtotime('-2 month', $time)),
+						strtotime('-1 month', $time) => date("Y-m-d", strtotime('-1 month', $time)),
+						strtotime('-0 month', $time) => date("Y-m-d", strtotime('-0 month', $time)),
 					),
                     array(
                       'options' => array(
@@ -104,7 +96,7 @@ $this->menu=array(
 	</table>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton('Сохранить'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
