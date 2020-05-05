@@ -46,14 +46,21 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'filter'=>$model,
 	'columns'=>array(
 		'id',
-		'date_create:date',
+		array(
+			'name' => 'region_id',
+			'type' => 'raw',
+			'value' => '$data->region->name',
+            'filter' => Region::getList(),
+        ),
+		array(
+			'name' => 'date_create',
+			'type' => 'raw',
+			'value' => 'date("d.m.Y", $data->date_create)',
+        ),
 		'price',
 		'diff',
 		'price_key',
 		'diff_key',
-		/*
-		'region_id',
-		*/
 		array(
 			'class'=>'CButtonColumn',
 		),

@@ -22,11 +22,17 @@ $this->menu=array(
 	'data'=>$model,
 	'attributes'=>array(
 		'id',
-		'date_create',
+		array(
+			'name' => 'Дата создания',
+			'value' => date("d.m.Y", $model->date_create),
+        ),
 		'price',
 		'diff',
 		'price_key',
 		'diff_key',
-		'region_id',
+		array(
+			'label' => 'Регион',
+			'value' => $model->region->name,
+        ),
 	),
 )); ?>

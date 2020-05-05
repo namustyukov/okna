@@ -53,6 +53,13 @@ class Pricecity extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
+			'id' => 'ID',
+			'date_create' => 'Дата статистики',
+			'region_id' => 'Регион',
+			'price' => 'Цена руб./м2',
+			'diff' => 'Процент изменения цены руб./м2',
+			'price_key' => 'Цена «под ключ»',
+			'diff_key' => 'Процент изменения цены «под ключ»',
 		);
 	}
 
@@ -75,6 +82,7 @@ class Pricecity extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
+		$criteria->compare('region_id',$this->region_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
