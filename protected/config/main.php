@@ -33,10 +33,10 @@ return array(
 			'allowAutoLogin'=>true,
 		),
 		'db'=>array(
-			'connectionString' => 'mysql:host=78.108.80.117;dbname=b160739_oknaorg',
+			'connectionString' => 'mysql:host=185.84.108.232;dbname=b226646_oknaorg',
 			'emulatePrepare' => true,
-			'username' => 'u160739',
-			'password' => 'ZqE7v128Sp',
+			'username' => 'u226646_user',
+			'password' => 'Sx7TZCx2',
 			'charset' => 'utf8',
 		),
 		'cache'=>array(
