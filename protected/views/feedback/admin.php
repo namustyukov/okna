@@ -6,6 +6,11 @@
 	'filter'=>$model,
 	'columns'=>array(
 		'id',
+		array(
+			'name' => 'created_at',
+			'type' => 'raw',
+			'value' => 'date("d.m.Y", $data->created_at)',
+        ),
 		'name',
 		'email',
 		'message',

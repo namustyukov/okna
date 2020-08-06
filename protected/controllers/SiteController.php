@@ -240,6 +240,7 @@ class SiteController extends Controller
 		$model->email = $feedback_email;
 		$model->message = $feedback_message;
 		$model->url = $url;
+		$model->created_at = time();
 		$model->save();
 
 		$data='';

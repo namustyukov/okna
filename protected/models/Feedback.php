@@ -40,7 +40,7 @@ class Feedback extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('message', 'required'),
-			array('id, name, email, message, url', 'safe', 'on'=>'search')
+			array('id, name, email, message, url, created_at', 'safe', 'on'=>'search')
 		);
 	}
 
@@ -63,6 +63,7 @@ class Feedback extends CActiveRecord
 			'name' => 'Имя',
 			'email' => 'Email',
 			'message' => 'Сообщение',
+			'created_at' => 'Дата',
 			'url' => 'URL страницы, с которой отправлено сообщение',
 		);
 	}
