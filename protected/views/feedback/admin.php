@@ -9,7 +9,7 @@
 		array(
 			'name' => 'created_at',
 			'type' => 'raw',
-			'value' => 'date("d.m.Y", $data->created_at)',
+			'value' => '$data->created_at ? date("d.m.Y", $data->created_at) : null',
         ),
 		'name',
 		'email',
