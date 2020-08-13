@@ -3,13 +3,11 @@
 /* @var $model City */
 
 $this->breadcrumbs=array(
-	'Cities'=>array('index'),
 	'Manage',
 );
 
 $this->menu=array(
-	array('label'=>'List City', 'url'=>array('index')),
-	array('label'=>'Create City', 'url'=>array('create')),
+	array('label'=>'Create Region', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -18,7 +16,7 @@ $('.search-button').click(function(){
 	return false;
 });
 $('.search-form form').submit(function(){
-	$('#city-grid').yiiGridView('update', {
+	$('#sub_region-grid').yiiGridView('update', {
 		data: $(this).serialize()
 	});
 	return false;
@@ -26,7 +24,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Cities</h1>
+<h1>Manage Regions</h1>
 
 <p>
 You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
@@ -41,40 +39,12 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 </div><!-- search-form -->
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'city-grid',
+	'id'=>'sub_region-grid',
 	'dataProvider'=>$model->search(),
 	'filter'=>$model,
 	'columns'=>array(
 		'id',
-		'gorod',
-		'goroda',
-		'gorode',
-		'gorodu',
-		array(
-			'name' => 'region_id',
-			'type' => 'raw',
-			'value' => '$data->region->name',
-            'filter' => Region::getList(),
-        ),
-        array(
-			'name' => 'sub_region_id',
-			'type' => 'raw',
-			'value' => '$data->sub_region->name',
-            'filter' => SubRegion::getList(),
-        ),
-		'kakih',
-		/*
-		'kakie',
-		'kakimi',
-		'kakuyu',
-		'kakoy',
-		'kakom',
-		'kakaya',
-		'simbol_name',
-		'koord_x',
-		'koord_y',
-		'date_modify',
-		*/
+		'name',
 		array(
 			'class'=>'CButtonColumn',
 		),

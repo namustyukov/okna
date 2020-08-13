@@ -104,6 +104,19 @@
 		<?php echo $form->error($model,'region_id'); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->labelEx($model,'sub_region_id'); ?>
+		<?php echo CHtml::activeDropDownList($model, 'sub_region_id',
+					CHtml::listData(SubRegion::model()->findAll(array('order'=>'id')), 'id', 'name'),
+                    array(
+                      'options' => array(
+                            $model->sub_region_id=>array('selected'=>true),
+                      ))
+                    );
+                ?>
+		<?php echo $form->error($model,'sub_region_id'); ?>
+	</div>
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Сохранить'); ?>
 	</div>

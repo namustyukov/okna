@@ -40,12 +40,12 @@ class City extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('gorod', 'required'),
-			array('region_id, rating', 'numerical', 'integerOnly'=>true),
+			array('region_id, sub_region_id, rating', 'numerical', 'integerOnly'=>true),
 			array('gorod, goroda, gorode, gorodu, kakih, kakie, kakimi, kakuyu, kakoy, kakom, kakaya, simbol_name', 'length', 'max'=>200),
 			array('koord_x, koord_y', 'length', 'max'=>50),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, gorod, goroda, gorode, gorodu, kakih, kakie, kakimi, kakuyu, kakoy, kakom, kakaya, simbol_name, region_id, rating, koord_x, koord_y, date_modify', 'safe', 'on'=>'search'),
+			array('id, gorod, goroda, gorode, gorodu, kakih, kakie, kakimi, kakuyu, kakoy, kakom, kakaya, simbol_name, region_id, sub_region_id, rating, koord_x, koord_y, date_modify', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -61,6 +61,7 @@ class City extends CActiveRecord
 			'reviews' => array(self::HAS_MANY, 'Review', 'city_id', 'order'=>'reviews.add_time DESC'),
 			'company' => array(self::HAS_MANY, 'Company', 'city_id', 'order'=>'company.rating ASC'),
 			'region' => array(self::BELONGS_TO, 'Region', 'region_id'),
+			'sub_region' => array(self::BELONGS_TO, 'SubRegion', 'sub_region_id'),
 		);
 	}
 
@@ -84,6 +85,7 @@ class City extends CActiveRecord
 			'kakaya' => 'Какая',
 			'simbol_name' => 'URL',
 			'region_id' => 'Регион',
+			'sub_region_id' => 'Область',
 			'koord_x' => 'Koord X',
 			'koord_y' => 'Koord Y',
 			'date_modify' => 'Date Modify',
@@ -141,6 +143,7 @@ class City extends CActiveRecord
 		$criteria->compare('kakaya',$this->kakaya,true);
 		$criteria->compare('simbol_name',$this->simbol_name,true);
 		$criteria->compare('region_id',$this->region_id,true);
+		$criteria->compare('sub_region_id',$this->sub_region_id,true);
 		$criteria->compare('koord_x',$this->koord_x,true);
 		$criteria->compare('koord_y',$this->koord_y,true);
 		$criteria->compare('date_modify',$this->date_modify,true);

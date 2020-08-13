@@ -22,6 +22,7 @@ $city = (isset($city[1]) &&
 		$city[1]!='page' && 
 		$city[1]!='companyNew' && 
 		$city[1]!='pricecity' && 
+		$city[1]!='subregion' && 
 		$city[1]!='gii' && 
 		$city[1]!='review'
 		) ? $city[1] : false;

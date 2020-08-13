@@ -35,6 +35,7 @@ $this->menu=array(
 		'kakaya',
 		'simbol_name',
 		'region_id',
+		'sub_region_id',
 		'koord_x',
 		'koord_y',
 		'date_modify',
