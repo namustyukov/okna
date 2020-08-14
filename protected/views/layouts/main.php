@@ -34,6 +34,7 @@
 	<?php $this->widget('zii.widgets.CMenu',array(
 		'items'=>array(
 			array('label'=>'Home', 'url'=>array('/site/index')),
+			array('label'=>'Области', 'url'=>array('/subregion/admin'), 'visible'=>!Yii::app()->user->isGuest),
 			array('label'=>'Города', 'url'=>array('/city/admin'), 'visible'=>!Yii::app()->user->isGuest),
 			array('label'=>'Компании', 'url'=>array('/company/admin'), 'visible'=>!Yii::app()->user->isGuest),
 			array('label'=>'Компании от пользователей', 'url'=>array('/companyNew/admin'), 'visible'=>!Yii::app()->user->isGuest),
