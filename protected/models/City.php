@@ -39,7 +39,7 @@ class City extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('gorod', 'required'),
+			array('gorod, region_id, sub_region_id', 'required'),
 			array('region_id, sub_region_id, rating', 'numerical', 'integerOnly'=>true),
 			array('gorod, goroda, gorode, gorodu, kakih, kakie, kakimi, kakuyu, kakoy, kakom, kakaya, simbol_name', 'length', 'max'=>200),
 			array('koord_x, koord_y', 'length', 'max'=>50),

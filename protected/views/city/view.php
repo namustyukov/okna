@@ -34,8 +34,14 @@ $this->menu=array(
 		'kakom',
 		'kakaya',
 		'simbol_name',
-		'region_id',
-		'sub_region_id',
+		array(
+			'label' => 'Регион',
+			'value' => $model->region->name,
+        ),
+		array(
+			'label' => 'Область',
+			'value' => $model->sub_region->name,
+        ),
 		'koord_x',
 		'koord_y',
 		'date_modify',

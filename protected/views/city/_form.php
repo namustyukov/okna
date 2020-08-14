@@ -96,6 +96,7 @@
 		<?php echo CHtml::activeDropDownList($model, 'region_id',
 					CHtml::listData(Region::model()->findAll(array('order'=>'id')), 'id', 'name'),
                     array(
+                      'prompt' => 'Не указано',
                       'options' => array(
                             $model->region_id=>array('selected'=>true),
                       ))
@@ -109,6 +110,7 @@
 		<?php echo CHtml::activeDropDownList($model, 'sub_region_id',
 					CHtml::listData(SubRegion::model()->findAll(array('order'=>'id')), 'id', 'name'),
                     array(
+                      'prompt' => 'Не указано',
                       'options' => array(
                             $model->sub_region_id=>array('selected'=>true),
                       ))
