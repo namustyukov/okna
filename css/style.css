@@ -1027,6 +1027,11 @@ body {
 .content_review_item_content{
 	margin-top: 10px;
 }
+.content_review_item_content iframe{
+	width: 560px;
+	height: 315px;
+	border: none;
+}
 .review_add{
 }
 .review_add_button{
@@ -2025,6 +2030,11 @@ body {
 	}
 .gorod_review_item_content{
 	margin-top: 10px;
+}
+.gorod_review_item_content iframe{
+	width: 560px;
+	height: 315px;
+	border: none;
 }
 .gorod_review_item_all{
 	text-align: center;
@@ -3321,7 +3331,7 @@ body {
 	}
 
 	/* ------------------- */
-	/* ------ gotod ------ */
+	/* ------ gorod ------ */
 
 	.content_gorod_company_row_header {
 		display: none;
@@ -3343,6 +3353,11 @@ body {
 		float: none;
 		width: auto;
 		font-weight: bold;
+	}
+
+	.gorod_review_item_content iframe{
+		width: 100%;
+		height: 200px;
 	}
 
 	/* ------------------- */
@@ -3497,6 +3512,14 @@ body {
 
 	.city_list_column_col {
 		width: 50%;
+	}
+
+	/* ------------------- */
+	/* ------ review ----- */
+
+	.content_review_item_content iframe{
+		width: 100%;
+		height: 200px;
 	}
 
 	/* ------------------- */
